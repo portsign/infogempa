@@ -24,15 +24,15 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <a class="navbar-brand" href="index.html">
-                        <h1><img src="images/logo.png" alt="logo"></h1>
+                    <a class="navbar-brand" href="/">
+                        <h1><img src="/images/logo.png" alt="logo"></h1>
                     </a>
                     
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="shortcodes.html ">Belajar</a></li>                    
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/belajar">Belajar</a></li>                    
                     </ul>
                 </div>
                 <div class="search">
