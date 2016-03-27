@@ -360,7 +360,6 @@
                 <center>
                     <div class="paginator">
                         <ul class="pagination">
-                            <?= $this->Paginator->options(['controller' => 'Pages', 'action' => 'display']) ?>
                             <?= $this->Paginator->prev('< ' . __('previous')) ?>
                             <?= $this->Paginator->numbers() ?>
                             <?= $this->Paginator->next(__('next') . ' >') ?>

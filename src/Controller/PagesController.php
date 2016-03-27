@@ -40,10 +40,10 @@ class PagesController extends AppController
      * @throws \Cake\Network\Exception\NotFoundException When the view file could not
      *   be found or \Cake\View\Exception\MissingTemplateException in debug mode.
      */
-    public function display($page = 1)
+    public function display()
     {
-        $this->request->params['named']['page'] = $page;
-        debug($this->request->params['named']['page']);
+        // $this->request->params['named']['page'] = $page;
+        // debug($this->request->params['named']['page']);
         // exit;
         $path = func_get_args();
 
@@ -76,8 +76,13 @@ class PagesController extends AppController
     public function detail($id=null, $slug=null)
     {
         $this->loadModel('Gempa');
+        $this->loadModel('NearbyCities');
         $gempa = $this->Gempa->find('all', [
             'conditions' => [ 'Gempa.id_gempa' => $id ]
-        ])->all();        
+        ])->all(); 
+        $nearby = $this->NearbyCities->find('all', [
+            'conditions' => [ 'NearbyCities.id_gempa' => $id ]
+        ])->all();       
+        $this->set(compact('gempa', 'nearby'));
     }
 }

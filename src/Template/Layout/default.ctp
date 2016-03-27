@@ -27,6 +27,11 @@
     <?= $this->Html->script('lightbox.min.js') ?>
     <?= $this->Html->script('wow.min.js') ?>
     <?= $this->Html->script('main.js') ?>
-
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.bold>').clone().appendTo('#appendTitle');
+            $('#appendTitle').css({'font-size':'14px', 'color':'#888'})
+        });
+    </script>
 </body>
 </html>
