@@ -27,6 +27,11 @@ use Cake\View\Exception\MissingTemplateException;
  */
 class PagesController extends AppController
 {
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadComponent('Paginator');
+    }
     
     /**
      * Displays a view
@@ -35,9 +40,15 @@ class PagesController extends AppController
      * @throws \Cake\Network\Exception\NotFoundException When the view file could not
      *   be found or \Cake\View\Exception\MissingTemplateException in debug mode.
      */
-    public function display()
+    public function display($page = 1)
     {
+        $this->request->params['named']['page'] = $page;
+        debug($this->request->params['named']['page']);
+        // exit;
         $path = func_get_args();
+
+        $this->loadModel('Gempa');
+        $gempa = $this->paginate($this->Gempa);
 
         $count = count($path);
         if (!$count) {
@@ -51,7 +62,7 @@ class PagesController extends AppController
         if (!empty($path[1])) {
             $subpage = $path[1];
         }
-        $this->set(compact('page', 'subpage'));
+        $this->set(compact('page', 'subpage', 'gempa'));
 
         try {
             $this->render(implode('/', $path));
@@ -62,8 +73,11 @@ class PagesController extends AppController
             throw new NotFoundException();
         }
     }
-    public function detail($id=null)
+    public function detail($id=null, $slug=null)
     {
-        
+        $this->loadModel('Gempa');
+        $gempa = $this->Gempa->find('all', [
+            'conditions' => [ 'Gempa.id_gempa' => $id ]
+        ])->all();        
     }
 }

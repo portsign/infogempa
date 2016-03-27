@@ -14,14 +14,8 @@
    </section>
     <!--/#action-->
 
-     <?php 
-        $content = file_get_contents('http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp');
-        $get = str_replace('eqfeed_callback(', '', $content);
-        $get = str_replace(');', '', $get);
-        $jsons = json_decode($get);
-        echo '<pre>';
-        print_r(get_headers('http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp'));
-        debug($this->request->params['id']);
+    <?php 
+        debug($this->request->params);
     ?>
 
     <section id="portfolio-information" class="padding-top">
