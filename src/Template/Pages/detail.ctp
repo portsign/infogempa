@@ -157,7 +157,7 @@
                       <div class="modal-dialog modal-lg">
                         <div class="modal-content" style="padding: 10px;">
                             <div id="pano"></div>
-                            <img src="/images/no_map.jpg" class="no_street_view hidden img-responsive" />
+                            <img src="/images/no_street_view.jpg" style="width:80%;" class="no_street_view hidden img-responsive" />
                         </div>
                       </div>
                     </div>

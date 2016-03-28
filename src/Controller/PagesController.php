@@ -42,13 +42,13 @@ class PagesController extends AppController
      */
     public function display()
     {
-        // $this->request->params['named']['page'] = $page;
-        // debug($this->request->params['named']['page']);
-        // exit;
+
         $path = func_get_args();
 
         $this->loadModel('Gempa');
-        $gempa = $this->paginate($this->Gempa);
+        $gempa = $this->paginate($this->Gempa, [
+            'conditions'
+        ]);
 
         $count = count($path);
         if (!$count) {
@@ -84,5 +84,26 @@ class PagesController extends AppController
             'conditions' => [ 'NearbyCities.id_gempa' => $id ]
         ])->all();       
         $this->set(compact('gempa', 'nearby'));
+    }
+    public function search() 
+    {
+        // debug($this->request->query);
+        $this->loadModel('Gempa');
+        $place = $this->request->query['place'];
+        $country = $this->request->query['country'];
+        $skala_richter = $this->request->query['skala_richter'];
+        $tsunami = $this->request->query['tsunami'];
+
+        $this->paginate = [
+            'conditions' => [ 'Gempa.place LIKE' => '%'.$place.'%', 
+                            'Gempa.place LIKE' => '%'.$country.'%',
+                            'Gempa.mag >' => $skala_richter,
+                            'Gempa.tsunami' => $tsunami ]
+        ];
+
+        debug($this->paginate('Gempa'));
+
+        $this->set(compact('gempa'));
+
     }
 }

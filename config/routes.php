@@ -35,6 +35,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     // );
 
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'detail']);
+    $routes->connect('/search', ['controller' => 'Pages', 'action' => 'search']);
     $routes->connect(
         '/pages/:id/:slug',
         ['controller' => 'Pages', 'action' => 'detail'],
