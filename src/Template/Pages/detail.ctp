@@ -157,6 +157,7 @@
                       <div class="modal-dialog modal-lg">
                         <div class="modal-content" style="padding: 10px;">
                             <div id="pano"></div>
+                            <img src="/images/no_map.jpg" class="no_street_view hidden img-responsive" />
                         </div>
                       </div>
                     </div>
@@ -176,7 +177,7 @@
             var geocoder = new google.maps.Geocoder();
             var directionsService = new google.maps.DirectionsService();
             var panorama;
-            var address = "666 5th avenue, New York, NY 10019";
+            var address = "<?= $lat.', '.$long ?>";
             var myLatLng2;
 
             var myLatLng = new google.maps.LatLng( <?= $lat.', '.$long ?> ),
@@ -209,7 +210,9 @@
                   };
                   directionsService.route(request, directionsCallback);
                 } else {
-                  alert("Geocode was not successful for the following reason: " + status);
+                    $('#pano').remove();
+                    $('.no_street_view').removeClass('hidden');
+                    // alert("Geocode was not successful for the following reason: " + status);
                 }
             });
 
@@ -228,7 +231,9 @@
                 panorama.setVisible(true);
 
                 } else {
-                    alert("Street View data not found for this location.");
+                    $('#pano').remove();
+                    $('.no_street_view').removeClass('hidden');
+                    // alert("Street View data not found for this location.");
                 }
             }
 
@@ -237,7 +242,9 @@
                     var latlng = response.routes[0].legs[0].start_location;
                     sv.getPanoramaByLocation(latlng, 50, processSVData);
                 } else {
-                    alert("Directions service not successfull for the following reason:" + status);
+                    $('#pano').remove();
+                    $('.no_street_view').removeClass('hidden');
+                    // alert("Directions service not successfull for the following reason:" + status);
                 }
             }
             $(document).ready(function(){
@@ -250,7 +257,7 @@
                 });
                 // });
             });
-            $('#pano').width(755).height(500);
+            $('#pano').width(755);
         }
 
         function moveMarker( map, marker ) {
