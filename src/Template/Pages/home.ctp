@@ -5,10 +5,24 @@
     div.form-group select.form-control {
         height: 34px!important;
     }
+    #map {
+        height: 100%;
+    }
 </style>
 <section id="home-slider">
         <div class="container">
             <div class="main-slider">
+                <a href="" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-bullseye"></i> Radar</a>
+                <!-- Large modal -->
+
+                    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content" style="padding:10px;">
+                          <div id="map"></div>
+                        </div>
+                      </div>
+                    </div>
+
                 <div class="slide-text">
                     <h1>Informasi Gempa Bumi Dunia</h1>
                     <p>Kami menyediakan informasi mengenai gempa bumi yang terjadi di dunia. untuk mendapatkan informasi secara update silahkan subscribe.</p>
@@ -27,6 +41,29 @@
         </div>
         <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
     </section>
+    <script>
+      var map;
+
+        function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 20, lng: -160 },
+            zoom: 2
+          });
+
+          // Get the earthquake data (JSONP format)
+          // This feed is a copy from the USGS feed, you can find the originals here:
+          //   http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
+          var script = document.createElement('script');
+          script.setAttribute('src',
+            'https://storage.googleapis.com/maps-devrel/quakes.geo.json');
+          document.getElementsByTagName('head')[0].appendChild(script);
+        }
+
+        // Defines the callback function referenced in the jsonp file.
+        function eqfeed_callback(data) {
+          map.data.addGeoJson(data);
+        }
+    </script>
     <!--/#home-slider-->
                 <div class="container">
                 <div class="main-slider">
@@ -303,17 +340,17 @@
                             <option value="Zimbabwe">Zimbabwe</option>
                         </select>
                         <select class="form-control" name="skala_richter">
-                            <option value"">skala-richter</option>
-                            <option value"1">1 > sr</option>
-                            <option value"2">2 > sr</option>
-                            <option value"3">3 > sr</option>
-                            <option value"4">4 > sr</option>
-                            <option value"5">5 > sr</option>
-                            <option value"6">6 > sr</option>
-                            <option value"7">7 > sr</option>
-                            <option value"8">8 > sr</option>
-                            <option value"9">9 > sr</option>
-                            <option value"10">10 > sr</option>
+                            <option value="">--skala-richter--</option>
+                            <option value="1">1 > sr</option>
+                            <option value="2">2 > sr</option>
+                            <option value="3">3 > sr</option>
+                            <option value="4">4 > sr</option>
+                            <option value="5">5 > sr</option>
+                            <option value="6">6 > sr</option>
+                            <option value="7">7 > sr</option>
+                            <option value="8">8 > sr</option>
+                            <option value="9">9 > sr</option>
+                            <option value="10">10 > sr</option>
                         </select>
                         <select class="form-control" name="tsunami">
                             <option value="0">tidak berpotensi tsunami</option>
@@ -353,7 +390,7 @@
                             <td><strong><?= $country ?></strong></td>
                             <td><?= $value->mag ?></td>
                             <td><?= date('d/m/Y H:i A', $time) ?></td>
-                            <td><a href="/pages/<?= $value->id_gempa.DS.$slug ?>" class="btn btn-success" >Detail</a></td>
+                            <td><a href="/pages/<?= $value->id_gempa.DS.$slug ?>" class="btn btn-success" ><i class="fa fa-eye"></i></a></td>
                         </tr>
                     <?php } ?>
                     </tbody>

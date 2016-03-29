@@ -3,3 +3,9 @@
 	border-top: 4px solid #A5732A;
 	margin-top: -20px;
 }
+.btn, .form-control, nav.navbar{
+	border-radius: 0px;
+}
+nav.navbar {
+	border-top: none;
+}
