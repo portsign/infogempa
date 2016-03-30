@@ -27,12 +27,6 @@ Router::defaultRouteClass('DashedRoute');
 Router::scope('/', function (RouteBuilder $routes) {
 
     $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
-    // $routes->connect('/page/:page', ['controller' => 'Pages', 'action' => 'display'], 
-    //     [
-    //         'pass' => ['page'], 
-    //         'page' => '[\d]+'
-    //     ]
-    // );
 
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'detail']);
     $routes->connect('/search', ['controller' => 'Pages', 'action' => 'search']);

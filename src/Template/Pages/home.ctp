@@ -12,16 +12,16 @@
 <section id="home-slider">
         <div class="container">
             <div class="main-slider">
-                <a href="" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-bullseye"></i> Radar</a>
+                <a href="/radar" class="btn btn-primary"><i class="fa fa-bullseye"></i> Radar</a>
                 <!-- Large modal -->
 
-                    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                    <!-- <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                       <div class="modal-dialog modal-lg">
                         <div class="modal-content" style="padding:10px;">
                           <div id="map"></div>
                         </div>
                       </div>
-                    </div>
+                    </div> -->
 
                 <div class="slide-text">
                     <h1>Informasi Gempa Bumi Dunia</h1>
@@ -387,8 +387,8 @@
                         $slug = strtolower(str_replace(' ', '-', $lokasi)).'.html';
                     ?>
                         <tr>
-                            <td><strong><?= $lokasi ?></strong></td>
-                            <td><strong><?= $country ?></strong></td>
+                            <td><strong><a href="/pages/<?= $value->id_gempa.DS.$slug ?>" title="<?= $value->title ?>"><?= $lokasi ?></a></strong></td>
+                            <td><strong><a href="/pages/<?= $value->id_gempa.DS.$slug ?>" title="<?= $value->title ?>"><?= $country ?></a></strong></td>
                             <td><?= $value->mag ?></td>
                             <td><?= date('d/m/Y H:i A', $time) ?></td>
                             <td><a href="/pages/<?= $value->id_gempa.DS.$slug ?>" class="btn btn-success" ><i class="fa fa-eye"></i></a></td>

@@ -94,6 +94,8 @@ class PagesController extends AppController
         $skala_richter = $this->request->query['skala_richter'];
         $tsunami = $this->request->query['tsunami'];
 
+        $condition = [];
+
         if(!empty($place)){
             $condition[] = ['Gempa.place LIKE' => '%'.$place.'%']; 
         }
@@ -112,32 +114,6 @@ class PagesController extends AppController
 
         $this->paginate = [
             'conditions' => [$condition],
-                    // 'Gempa.place LIKE' => '%'.$place.'%',
-                    // 'OR' => [
-                    //     [
-                    //         'AND' => [
-
-                    //                 'Gempa.place LIKE' => '%'.$place.'%', 
-                    //                 'Gempa.place LIKE' => '%'.$country.'%'
-                    //         ],
-                    //         'AND' => [
-
-                    //                 'Gempa.place LIKE' => '%'.$place.'%', 
-                    //                 'Gempa.mag >' => $skala_richter
-                    //         ],
-                    //         'AND' => [
-                    //                 'Gempa.place LIKE' => '%'.$place.'%', 
-                    //                 'Gempa.tsunami' => $tsunami
-                    //         ],
-                    //         'AND' => [
-                    //                 'Gempa.place LIKE' => '%'.$place.'%', 
-                    //                 'Gempa.mag >' => $skala_richter,
-                    //                 'Gempa.tsunami' => $tsunami
-                    //         ]
-                                
-                    //     ]
-                    // ]
-                // ],
             'order' => ['Gempa.created' => 'DESC']
         ];
         $gempa = $this->paginate($this->Gempa);
