@@ -325,6 +325,7 @@
                             <option value="10">10 > sr</option>
                         </select>
                         <select class="form-control" name="tsunami">
+                            <option value="" selected="selected">--potensi tsunami--</option>
                             <option <?php if ($tsunami == 0) { echo 'selected'; } ?> value="0">tidak berpotensi tsunami</option>
                             <option <?php if ($tsunami == 1) { echo 'selected'; } ?> value="1">berpotensi tsunami</option>
                         </select>

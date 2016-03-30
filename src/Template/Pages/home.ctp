@@ -353,6 +353,7 @@
                             <option value="10">10 > sr</option>
                         </select>
                         <select class="form-control" name="tsunami">
+                            <option value="">--potensi tsunami--</option>
                             <option value="0">tidak berpotensi tsunami</option>
                             <option value="1">berpotensi tsunami</option>
                         </select>

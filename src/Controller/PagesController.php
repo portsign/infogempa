@@ -94,21 +94,50 @@ class PagesController extends AppController
         $skala_richter = $this->request->query['skala_richter'];
         $tsunami = $this->request->query['tsunami'];
 
+        if(!empty($place)){
+            $condition[] = ['Gempa.place LIKE' => '%'.$place.'%']; 
+        }
+
+        if(!empty($country)){
+            $condition[] = ['Gempa.place LIKE' => '%'.$country.'%']; 
+        }
+
+        if(!empty($skala_richter)){
+            $condition[] = ['Gempa.mag >' => $skala_richter]; 
+        }
+
+        if(!empty($tsunami)){
+            $condition[] = ['Gempa.tsunami' => $tsunami]; 
+        }
+
         $this->paginate = [
-            'conditions' => [
-                    'Gempa.place LIKE' => '%'.$place.'%',
-                    'OR' => [
-                        [
-                            
+            'conditions' => [$condition],
+                    // 'Gempa.place LIKE' => '%'.$place.'%',
+                    // 'OR' => [
+                    //     [
+                    //         'AND' => [
 
-                                'Gempa.place LIKE' => '%'.$country.'%', 
-                                'Gempa.mag > ' => $skala_richter,
-                                'Gempa.tsunami' => $tsunami
+                    //                 'Gempa.place LIKE' => '%'.$place.'%', 
+                    //                 'Gempa.place LIKE' => '%'.$country.'%'
+                    //         ],
+                    //         'AND' => [
 
-                            
-                        ]
-                    ]
-                ],
+                    //                 'Gempa.place LIKE' => '%'.$place.'%', 
+                    //                 'Gempa.mag >' => $skala_richter
+                    //         ],
+                    //         'AND' => [
+                    //                 'Gempa.place LIKE' => '%'.$place.'%', 
+                    //                 'Gempa.tsunami' => $tsunami
+                    //         ],
+                    //         'AND' => [
+                    //                 'Gempa.place LIKE' => '%'.$place.'%', 
+                    //                 'Gempa.mag >' => $skala_richter,
+                    //                 'Gempa.tsunami' => $tsunami
+                    //         ]
+                                
+                    //     ]
+                    // ]
+                // ],
             'order' => ['Gempa.created' => 'DESC']
         ];
         $gempa = $this->paginate($this->Gempa);
