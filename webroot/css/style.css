@@ -9,3 +9,9 @@
 nav.navbar {
 	border-top: none;
 }
+.btn-subscribe {
+	background-color: #FFF;
+}
+.slide-text {
+	margin-top: -36px;
+}

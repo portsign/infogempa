@@ -33,5 +33,15 @@
             $('#appendTitle').css({'font-size':'14px', 'color':'#888'})
         });
     </script>
+    <script type="text/javascript">
+        var email = $('#email').val();
+        $('#email').on('change keypress keyup keydown paste', function(){
+            if ($('#email').val().length==0) {
+                $('.g-recaptcha').addClass('hidden');
+            } else {
+                $('.g-recaptcha').removeClass('hidden');
+            }
+        });
+    </script>
 </body>
 </html>

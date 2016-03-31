@@ -9,6 +9,7 @@
         height: 100%;
     }
 </style>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <section id="home-slider">
         <div class="container">
             <div class="main-slider">
@@ -26,8 +27,11 @@
                 <div class="slide-text">
                     <h1>Informasi Gempa Bumi Dunia</h1>
                     <p>Kami menyediakan informasi mengenai gempa bumi yang terjadi di dunia. untuk mendapatkan informasi secara update silahkan subscribe.</p>
-                    <input type="text" class="form-control" placeholder="Email" />
-                    <a href="#" class="btn btn-common">Subscribe</a>
+                    <form action="/subscribe" method="get">
+                        <input type="text" name="email" id="email" class="form-control" placeholder="Email" />
+                        <div class="g-recaptcha hidden" style="margin-top: 5px;" data-sitekey="6LciLRwTAAAAAF1vVA1Fw1vZRDj7a3-1PZg2UMqR"></div>
+                        <button type="submit" href="#" class="btn btn-common btn-subscribe">Subscribe</button>
+                    </form>
                 </div>
                 <img src="/images/home/slider/slide1/house.png" class="img-responsive slider-house" alt="slider image">
                 <img src="/images/home/slider/slide1/circle1.png" class="slider-circle1" alt="slider image">
@@ -64,6 +68,7 @@
           map.data.addGeoJson(data);
         }
     </script>
+    
     <!--/#home-slider-->
                 <div class="container">
                 <div class="main-slider">
