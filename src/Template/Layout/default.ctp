@@ -9,7 +9,7 @@
     <title>Info Gempa Terlengkap</title>
     <?= $this->Html->meta('favicon.ico', '/images/favicon.ico', ['type' => 'icon']) ?>
     <?= $this->Html->css('bootstrap.min.css') ?>
-    <?= $this->Html->css('font-awesome.min.css') ?>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <?= $this->Html->css('animate.min.css') ?>
     <?= $this->Html->css('lightbox.css') ?>
     <?= $this->Html->css('main.css') ?>
