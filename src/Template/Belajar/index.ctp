@@ -68,7 +68,7 @@
 
                                 if (strlen($string) > 400) {
                                     $stringCut = substr($string, 0, 400);
-                                    $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'... <a href="/this/story">Read More</a>'; 
+                                    $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'... <a href="#">Read More</a>'; 
                                 }
 
                         ?>
@@ -81,7 +81,7 @@
                                     </div>
                                 </div>
                                 <div class="post-content overflow">
-                                    <h2 class="post-title bold"><a href="blogdetails.html"><?= $title ?></a></h2>
+                                    <h2 class="post-title bold"><a href="#"><?= $title ?></a></h2>
                                     <h3 class="post-author"><a href="#">Posted by <?= $author ?></a> &nbsp;&nbsp; <small><i><?= $actual_date ?></i></small></h3>
                                     <p><?= $string ?></p>
                                     <a href="#" class="read-more">View More</a>
