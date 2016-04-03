@@ -1,11 +1,46 @@
+<style>
+#map-canvas 
+{ 
+    height: 400px; 
+    width: 500px;
+}
+.bg-text{
+    color: white;
+    font: bold 24px/45px Helvetica, Sans-Serif;
+    letter-spacing: -1px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 6px;
+    padding-right: 10px;
+    font-size: 2.2vw;
+    font-weight: normal;
+    font-family: 'Roboto', serif;
+    width: 220px;
+}
+.bg-text-lokasi {
+    color: white!important;
+    height:41px;
+    padding-top: 0px!important;
+    font: bold 24px/45px Helvetica, Sans-Serif;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 6px;
+    padding-right: 10px;
+    font-size: 2.2vw;
+    font-weight: normal;
+    font-family: 'Roboto', serif;
+    width: auto;
+    max-width: 420px;
+}
+</style>
 <section id="page-breadcrumb">
         <div class="vertical-center sun">
              <div class="container">
                 <div class="row">
                     <div class="action">
                         <div class="col-sm-12">
-                            <h1 class="title">Detail Gempa</h1>
-                            <p id="appendTitle"></p>
+                            <h1 class="title bg-text"><strong>Detail Gempa</strong></h1>
+                            <p id="appendTitle" class="bg-text-lokasi"></p>
                         </div>
                     </div>
                 </div>
@@ -17,13 +52,6 @@
     <?php 
         // debug($gempa);
     ?>
-    <style>
-    #map-canvas 
-    { 
-        height: 400px; 
-        width: 500px;
-    }
-    </style>
     <section id="portfolio-information" class="padding-top">
         <div class="container">
             <div class="row">
@@ -161,7 +189,8 @@
                         </div>
                       </div>
                     </div>
-
+                    <br />
+                    <small><i>Sumber : <a href="http://earthquake.usgs.gov/">earthquake.usgs.gov</i></small>
                     <br />
                 </div>
                 <?php } ?>

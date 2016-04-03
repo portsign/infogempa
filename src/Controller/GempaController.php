@@ -2,8 +2,6 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-// use Cake\ORM\Table;
-// use Cake\ORM\TableRegistry;
 use Cake\ORM\Entity;
 /**
  * Gempa Controller
@@ -78,7 +76,6 @@ class GempaController extends AppController
                     $this->NearbyCities->save($gempa_near);
 
                 }
-                    // exit;
                 $this->Gempa->save($gempa);
                 // exit;
             // }

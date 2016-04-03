@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Info Gempa Terlengkap</title>
-    <?= $this->Html->meta('icon') ?>
+    <?= $this->Html->meta('favicon.ico', '/images/favicon.ico', ['type' => 'icon']) ?>
     <?= $this->Html->css('bootstrap.min.css') ?>
     <?= $this->Html->css('font-awesome.min.css') ?>
     <?= $this->Html->css('animate.min.css') ?>

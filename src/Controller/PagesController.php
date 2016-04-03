@@ -17,7 +17,8 @@ namespace App\Controller;
 use Cake\Core\Configure;
 use Cake\Network\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
-
+use Cake\ORM\Entity;
+use Cake\Mailer\Email;
 /**
  * Static content controller
  *
@@ -42,7 +43,11 @@ class PagesController extends AppController
      */
     public function display()
     {
-
+        // debug($this->request->query['subscribe']);
+        // exit;
+        // if ($this->request->query['subscribe']=='true') {
+            
+        // }
         $path = func_get_args();
 
         $this->loadModel('Gempa');
@@ -119,5 +124,64 @@ class PagesController extends AppController
         $gempa = $this->paginate($this->Gempa);
 
         $this->set(compact('gempa'));
+    }
+
+    public function subscribe()
+    {
+
+        $this->loadModel('Subscribers');
+        $captcha = $this->request->data['g-recaptcha-response'];
+        $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LciLRwTAAAAAFFQlcJ900GkG6m34z3_WqsZDYQN&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
+        $responseData = json_decode($response);
+        
+        if ($responseData->success) {
+            $subscribe = $this->Subscribers->newEntity();
+            if ($this->request->is('post')) {
+                $subscribe = $this->Subscribers->patchEntity($subscribe, $this->request->data);
+                if ($this->Subscribers->save($subscribe)) {
+                    $this->Flash->success('Terimakasih sudah subscribe kami', [
+                        'key' => 'subscribe_scs'
+                    ]);
+                    return $this->redirect('/');
+                } else {
+                    $this->Flash->error('Email anda sudah terdaftar', [
+                        'key' => 'subscribe_emrg'
+                    ]);
+                    return $this->redirect('/');
+                }
+            }
+            $this->set(compact('subscribe'));
+            $this->set('_serialize', ['subscribe']);
+        } else {
+            $this->Flash->recaptcha('Pastikan anda bukan robot, centang captcha dibawah ini', [
+                'key' => 'subscribe_capt'
+            ]);
+            return $this->redirect('/');
+        }
+    }
+
+    public function contactAction() 
+    {
+        if ($this->request->is('post')) {
+            $this->Flash->success('Terimakasih sudah Mengontak Kami. Kami akan segera menanggapi pesan anda', [
+                'key' => 'success_contact'
+            ]);
+            $email = new Email('default');
+            $email->emailFormat('html');
+            $email->from([$this->request->data['email'] => 'Contact Info Gempa'])
+                ->to(['info@infogempa.com', 'nafiansyah.aqi@gmail.com'])
+                ->subject('Contact Message')
+                ->send('<h3>Contact InfoGempa Notification</h3><table><tr><td>Nama</td><td>:</td><td>'.$this->request->data['name'].'</td></tr><tr><td>Email</td><td>:</td><td>'.$this->request->data['email'].'</td></tr><tr><td>Message</td><td>:</td><td>'.$this->request->data['message'].'</td></tr></table>');
+               
+            return $this->redirect('/#contact');
+        }
+    }
+    public function privacyPolicy() 
+    {
+
+    }
+    public function dmca() 
+    {
+        
     }
 }

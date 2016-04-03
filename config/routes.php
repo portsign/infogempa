@@ -30,6 +30,11 @@ Router::scope('/', function (RouteBuilder $routes) {
 
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'detail']);
     $routes->connect('/search', ['controller' => 'Pages', 'action' => 'search']);
+    $routes->connect('/subscribe', ['controller' => 'Pages', 'action' => 'subscribe']);
+    $routes->connect('/contact-action', ['controller' => 'Pages', 'action' => 'contactAction']);
+    $routes->connect('/privacy-policy', ['controller' => 'Pages', 'action' => 'privacyPolicy']);
+    $routes->connect('/dmca', ['controller' => 'Pages', 'action' => 'dmca']);
+    $routes->connect('/news', ['controller' => 'Pages', 'action' => 'news']);
     $routes->connect(
         '/pages/:id/:slug',
         ['controller' => 'Pages', 'action' => 'detail'],

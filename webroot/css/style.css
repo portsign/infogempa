@@ -15,3 +15,6 @@ nav.navbar {
 .slide-text {
 	margin-top: -36px;
 }
+tr td strong a {
+	color: #333;
+}

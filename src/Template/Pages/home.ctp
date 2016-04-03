@@ -14,21 +14,14 @@
         <div class="container">
             <div class="main-slider">
                 <a href="/radar" class="btn btn-primary"><i class="fa fa-bullseye"></i> Radar</a>
-                <!-- Large modal -->
-
-                    <!-- <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                      <div class="modal-dialog modal-lg">
-                        <div class="modal-content" style="padding:10px;">
-                          <div id="map"></div>
-                        </div>
-                      </div>
-                    </div> -->
-
                 <div class="slide-text">
-                    <h1>Informasi Gempa Bumi Dunia</h1>
-                    <p>Kami menyediakan informasi mengenai gempa bumi yang terjadi di dunia. untuk mendapatkan informasi secara update silahkan subscribe.</p>
-                    <form action="/subscribe" method="get">
-                        <input type="text" name="email" id="email" class="form-control" placeholder="Email" />
+                    <h1 class="title">Informasi Gempa Bumi Dunia</h1>
+                    <p class="p-title">Kami menyediakan informasi mengenai gempa bumi yang terjadi di dunia. untuk mendapatkan informasi secara update silahkan subscribe.</p>
+                    <form action="/subscribe" method="post">
+                        <?= $this->Flash->render('subscribe_scs') ?>
+                        <?= $this->Flash->render('subscribe_emrg') ?>
+                        <?= $this->Flash->render('subscribe_capt') ?>
+                        <input type="text" name="email" id="email" class="form-control" placeholder="Email" required />
                         <div class="g-recaptcha hidden" style="margin-top: 5px;" data-sitekey="6LciLRwTAAAAAF1vVA1Fw1vZRDj7a3-1PZg2UMqR"></div>
                         <button type="submit" href="#" class="btn btn-common btn-subscribe">Subscribe</button>
                     </form>
