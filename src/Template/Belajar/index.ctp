@@ -154,6 +154,18 @@
 
                             <?php } ?>
                         </div>
+                        <br />
+                        <script type="text/javascript">
+                            google_ad_client = "ca-pub-8007533189697599";
+                            google_ad_slot = "2631723860";
+                            google_ad_width = 262;
+                            google_ad_height = 520;
+                        </script>
+                        <!-- info_gempa_official_web_1 -->
+                        <script type="text/javascript"
+                        src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                        </script>
+                        
                         <div class="sidebar-item categories">
                             <h3>Categories</h3>
                             <ul class="nav navbar-stacked">
