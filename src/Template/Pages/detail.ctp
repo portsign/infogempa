@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="col-sm-6">
                 
-                <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+                <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
                 <div id="map-canvas"></div>
                 <?php 
                     // debug($nearby);

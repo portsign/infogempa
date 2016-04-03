@@ -8,18 +8,18 @@
 		 
 		&rarr; Google, as a third party vendor, uses cookies to serve ads on infogempa.com.<br> 
 		&rarr; Google's use of the DART cookie enables it to serve ads to our site's visitors based upon their visit to infogempa.com and other sites on the Internet. <br> 
-		&rarr; Users may opt out of the use of the DART cookie by visiting the Google ad and content network privacy policy at the following URL - <a href="http://www.google.com/privacy_ads.html" title="Opt out of the Dart Cookie">http://www.google.com/privacy_ads.html</a> </p> 
+		&rarr; Users may opt out of the use of the DART cookie by visiting the Google ad and content network privacy policy at the following URL - <a href="https://www.google.com/privacy_ads.html" title="Opt out of the Dart Cookie">https://www.google.com/privacy_ads.html</a> </p> 
 		<p><b>Our Advertising Partners</b><br> 
 		 Some of our advertising partners may use cookies and web beacons on our site. Our advertising partners include ....... <br>
 		<ul><li>Google</li>
 		</ul>
-		<p><em>While each of these advertising partners has their own Privacy Policy for their site, an updated and hyperlinked resource is maintained here: <a href="http://www.privacypolicyonline.com/privacy-policies">Privacy Policies</a>.<br /> 
+		<p><em>While each of these advertising partners has their own Privacy Policy for their site, an updated and hyperlinked resource is maintained here: <a href="https://www.privacypolicyonline.com/privacy-policies">Privacy Policies</a>.<br /> 
 		You may consult this listing to find the privacy policy for each of the advertising partners of infogempa.com.</em></p>
 		<p> These third-party ad servers or ad networks use technology in their respective advertisements and links that appear on infogempa.com and which are sent directly to your browser. They automatically receive your IP address when this occurs. Other technologies (such as cookies, JavaScript, or Web Beacons) may also be used by our site's third-party ad networks to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on the site. </p> 
 		<p> infogempa.com has no access to or control over these cookies that are used by third-party advertisers. </p> 
 		<p> </p><p><b>Third Party Privacy Policies</b><br> 
-		You should consult the respective privacy policies of these third-party ad servers for more detailed information on their practices as well as for instructions about how to opt-out of certain practices. infogempa.com's privacy policy does not apply to, and we cannot control the activities of, such other advertisers or web sites. You may find a comprehensive listing of these privacy policies and their links here: <a href="http://www.privacypolicyonline.com/privacy-policy-links" title="Privacy Policy Links">Privacy Policy Links</a>.</p> 
-		<p> If you wish to disable cookies, you may do so through your individual browser options. More detailed information about cookie management with specific web browsers can be found at the browsers' respective websites. <a href="http://www.privacypolicyonline.com/what-are-cookies">What Are Cookies?</a></p>
+		You should consult the respective privacy policies of these third-party ad servers for more detailed information on their practices as well as for instructions about how to opt-out of certain practices. infogempa.com's privacy policy does not apply to, and we cannot control the activities of, such other advertisers or web sites. You may find a comprehensive listing of these privacy policies and their links here: <a href="https://www.privacypolicyonline.com/privacy-policy-links" title="Privacy Policy Links">Privacy Policy Links</a>.</p> 
+		<p> If you wish to disable cookies, you may do so through your individual browser options. More detailed information about cookie management with specific web browsers can be found at the browsers' respective websites. <a href="https://www.privacypolicyonline.com/what-are-cookies">What Are Cookies?</a></p>
 
 		<p><strong>Children's Information</strong><br />We believe it is important to provide added protection for children online. We encourage parents and guardians to spend time online with their children to observe, participate in and/or monitor and guide their online activity.
 		infogempa.com does not knowingly collect any personally identifiable information from children under the age of 13.  If a parent or guardian believes that infogempa.com has in its database the personally-identifiable information of a child under the age of 13, please contact us immediately (using the contact in the first paragraph) and we will use our best efforts to promptly remove such information from our records.
@@ -31,8 +31,8 @@
 		<p><b>Consent</b><br />
 		By using our website, you hereby consent to our privacy policy and agree to its terms.
 		</p><br /><br /><p><b>Update</b><br />This Privacy Policy was last updated on: Friday, April 1st, 2016.
-		<a href="http://www.PrivacyPolicyOnline.com" title="PrivacyPolicyOnline.com Approved Site" target="_blank"><img src="http://www.privacypolicyonline.com/images/privacypolicyonline-seal.png" border="0" alt="Privacy Policy Online Approved Site" align="right" /></a><br /><em>Should we update, amend or make any changes to our privacy policy, those changes will be posted here.</em>
+		<a href="https://www.PrivacyPolicyOnline.com" title="PrivacyPolicyOnline.com Approved Site" target="_blank"><img src="https://www.privacypolicyonline.com/images/privacypolicyonline-seal.png" border="0" alt="Privacy Policy Online Approved Site" align="right" /></a><br /><em>Should we update, amend or make any changes to our privacy policy, those changes will be posted here.</em>
 		<br /><br /></p>
-		<!-- END of Privacy Policy || Generated by http://www.PrivacyPolicyOnline.com || -->
+		<!-- END of Privacy Policy || Generated by https://www.PrivacyPolicyOnline.com || -->
     </div>
 </section>
