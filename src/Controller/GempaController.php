@@ -25,7 +25,7 @@ class GempaController extends AppController
             'limit' => 1
         ]);
         foreach ($gempa as $gempa_data) {
-            $datag = [];
+            // $datag = [];
             $datag = $gempa_data;
         }
         
@@ -57,7 +57,7 @@ class GempaController extends AppController
             $get_nearby = str_replace(');', '', $get_nearby);
             $jsons_nearby = json_decode($get_nearby);
             // ==================================================================================
-            $datag = [];
+            // $datag = [];
             if ($datag->id_gempa==$value->id) {
                 //data sudah ada di database
                 echo 'data sudah ada di database';
