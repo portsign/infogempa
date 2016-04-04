@@ -20,14 +20,14 @@ class GempaController extends AppController
         $get = str_replace(');', '', $get);
         $jsons = json_decode($get);
 
-        // $gempa = $this->Gempa->find('all', [
-        //     'order' => ['Gempa.id' => 'DESC'],
-        //     'limit' => 1
-        // ]);
-        // foreach ($gempa as $gempa_data) {
-        //     $datag = [];
-        //     $datag = $gempa_data;
-        // }
+        $gempa = $this->Gempa->find('all', [
+            'order' => ['Gempa.id' => 'DESC'],
+            'limit' => 1
+        ]);
+        foreach ($gempa as $gempa_data) {
+            $datag = [];
+            $datag = $gempa_data;
+        }
         
         foreach ($jsons->features as $value) {
             $value->properties->coordinates1 = $value->geometry->coordinates[0];
@@ -57,12 +57,12 @@ class GempaController extends AppController
             $get_nearby = str_replace(');', '', $get_nearby);
             $jsons_nearby = json_decode($get_nearby);
             // ==================================================================================
-            // $datag = [];
-            // if ($datag->id_gempa==$value->id) {
-            //     //data sudah ada di database
-            //     echo 'data sudah ada di database';
-            //     exit;
-            // } else {
+            $datag = [];
+            if ($datag->id_gempa==$value->id) {
+                //data sudah ada di database
+                echo 'data sudah ada di database';
+                exit;
+            } else {
 
                 foreach ($jsons_nearby as $jsnearb) {
                     // debug((array)$jsnearb);
@@ -77,8 +77,8 @@ class GempaController extends AppController
                     
                 }
                 $this->Gempa->save($gempa);
-                // exit;
-            // }
+                exit;
+            }
 
         }
 
