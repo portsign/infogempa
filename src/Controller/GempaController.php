@@ -3,7 +3,6 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\ORM\Entity;
-use Cake\Console\Shell;
 /**
  * Gempa Controller
  *
