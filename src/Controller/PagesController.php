@@ -51,9 +51,16 @@ class PagesController extends AppController
         $path = func_get_args();
 
         $this->loadModel('Gempa');
-        $gempa = $this->paginate($this->Gempa, [
-            'conditions'
-        ]);
+        // $gempa = $this->paginate($this->Gempa, [
+        //     'order' => ['Gempa.created' => 'DESC']
+        // ]);
+
+        $this->paginate = [
+            'order' => [
+                'Gempa.time' => 'DESC'
+            ]
+        ];
+        $gempa = $this->paginate($this->Gempa);
 
         $count = count($path);
         if (!$count) {
