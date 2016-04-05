@@ -136,7 +136,7 @@
                     }
 
                     if ($tsunami==1) {
-                        $is_tsunami = 'Gempa ini merupakan gempa <strong><span style="color:#c0392b;">berpotensi tsunami</span><strong>';
+                        $is_tsunami = 'Gempa ini merupakan gempa <strong><span style="color:#c0392b;">berpotensi tsunami</span></strong>';
                     } else {
                         $is_tsunami = 'Namun gempa ini <strong>tidak berpotensi tsunami</strong> oleh karena itu warga '.$val_gempa->place.' tidak perlu khawatir akan terjadinya tsunami';
                     }

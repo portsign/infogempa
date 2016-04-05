@@ -5,6 +5,12 @@
     div.form-group select.form-control {
         height: 34px!important;
     }
+    .select-country {
+        width: 115px!important;
+    }
+    .select-tsunami {
+        width: 115px!important;
+    }
 </style>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <section id="home-slider">
@@ -45,19 +51,14 @@
 
 
     ?>
+             <!--/#home-slider-->
                 <div class="container">
                 <div class="main-slider">
-
+                <div class="col-md-9">
                  <nav class="navbar navbar-default">
-                  <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                      </button>
+                     
                       <a class="navbar-brand" href="#"><strong>Cari Gempa</strong></a>
                     </div>
 
@@ -67,7 +68,7 @@
                       <?= $this->Form->create('search', ['url'=>'/search', 'type'=>'get', 'class' => 'navbar-form navbar-left']) ?>
                         <div class="form-group">
                           <input type="text" class="form-control" name="place" value="<?= $place ?>" placeholder="Cari berdasarkan lokasi">
-                          <select class="form-control" name="country">
+                          <select class="select-country form-control" name="country">
                             <option <?php if ($country == "") { echo 'selected'; } ?> value="">--country--</option>
 							<option <?php if ($country == "Afghanistan") { echo 'selected'; } ?> value="Afghanistan">Afghanistan</option>
 							<option <?php if ($country == "Åland Islands") { echo 'selected'; } ?> value="Åland Islands">Åland Islands</option>
@@ -320,7 +321,7 @@
 							<option <?php if ($country == "Zimbabwe") { echo 'selected'; } ?> value="Zimbabwe">Zimbabwe</option>
                         </select>
                         <select class="form-control" name="skala_richter">
-                            <option value="">--skala-richter--</option>
+                            <option value="">-mag-</option>
                             <option value="1">1 > sr</option>
                             <option value="2">2 > sr</option>
                             <option value="3">3 > sr</option>
@@ -332,17 +333,15 @@
                             <option value="9">9 > sr</option>
                             <option value="10">10 > sr</option>
                         </select>
-                        <select class="form-control" name="tsunami">
-                            <option value="" selected="selected">--potensi tsunami--</option>
+                        <select class="select-tsunami form-control" name="tsunami">
+                            <option value="" selected="selected">-tsunami-</option>
                             <option <?php if ($tsunami == 0) { echo 'selected'; } ?> value="0">tidak berpotensi tsunami</option>
                             <option <?php if ($tsunami == 1) { echo 'selected'; } ?> value="1">berpotensi tsunami</option>
                         </select>
                         </div>
                         <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
                       <?= $this->Form->end() ?>
-                    </div><!-- /.navbar-collapse -->
-                  </div><!-- /.container-fluid -->
-                </nav>
+                      </div>
                 <table class="table table-striped table-gempa">
                     <thead>
                         <th>Lokasi Gempa</th>
@@ -353,6 +352,40 @@
                     </thead>
                     <tbody>
                     <?php 
+
+                        function indonesian_date ($timestamp = '', $date_format = 'l, j F Y | H:i', $suffix = 'WIB') {
+                            if (trim ($timestamp) == '')
+                            {
+                                $timestamp = time ();
+                            }
+                            elseif (!ctype_digit ($timestamp))
+                            {
+                                $timestamp = strtotime ($timestamp);
+                            }
+                            # remove S (st,nd,rd,th) there are no such things in indonesia :p
+                            $date_format = preg_replace ("/S/", "", $date_format);
+                            $pattern = array (
+                                '/Mon[^day]/','/Tue[^sday]/','/Wed[^nesday]/','/Thu[^rsday]/',
+                                '/Fri[^day]/','/Sat[^urday]/','/Sun[^day]/','/Monday/','/Tuesday/',
+                                '/Wednesday/','/Thursday/','/Friday/','/Saturday/','/Sunday/',
+                                '/Jan[^uary]/','/Feb[^ruary]/','/Mar[^ch]/','/Apr[^il]/','/May/',
+                                '/Jun[^e]/','/Jul[^y]/','/Aug[^ust]/','/Sep[^tember]/','/Oct[^ober]/',
+                                '/Nov[^ember]/','/Dec[^ember]/','/January/','/February/','/March/',
+                                '/April/','/June/','/July/','/August/','/September/','/October/',
+                                '/November/','/December/',
+                            );
+                            $replace = array ( 'Sen','Sel','Rab','Kam','Jum','Sab','Min',
+                                'Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu',
+                                'Jan','Feb','Mar','Apr','Mei','Jun','Jul','Ags','Sep','Okt','Nov','Des',
+                                'Januari','Februari','Maret','April','Juni','Juli','Agustus','Sepember',
+                                'Oktober','November','Desember',
+                            );
+                            $date = date ($date_format, $timestamp);
+                            $date = preg_replace ($pattern, $replace, $date);
+                            $date = "{$date} {$suffix}";
+                            return $date;
+                        } 
+                        date_default_timezone_set('Asia/Jakarta');
                         foreach ($gempa as $value) {
                         $time = substr($value->time, 0, 10);
                         $lokasi = explode(",", $value->place);
@@ -365,13 +398,12 @@
                             $country = '-';
                         }
                         $slug = strtolower(str_replace(' ', '-', $lokasi)).'.html';
-
                     ?>
                         <tr>
                             <td><strong><?= $lokasi ?></strong></td>
                             <td><strong><?= $country ?></strong></td>
                             <td><?= $value->mag ?></td>
-                            <td><?= date('d/m/Y H:i A', $time) ?></td>
+                            <td><?= indonesian_date($time) ?></td>
                             <td><a href="/pages/<?= $value->id_gempa.DS.$slug ?>" class="btn btn-success" >Detail</a></td>
                         </tr>
                     <?php } ?>
@@ -386,5 +418,37 @@
                         </ul>
                     </div>
                 </center>
+                </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                  <div class="panel-heading">Main Menu</div>
+                  <div class="panel-body">
+                    <a href="/">Home</a>
+                  </div>
+                  <div class="panel-body">
+                    <a href="/belajar">Belajar Geologi</a>
+                  </div>
+                  <div class="panel-body">
+                    <a href="/artikel/">News</a>
+                  </div>
+                  <div class="panel-body">
+                    <a href="#contact">Contact</a>
+                  </div>
+                </div>
+                <!-- Ads by google -->
+
+                <script type="text/javascript">
+                    google_ad_client = "ca-pub-8007533189697599";
+                    google_ad_slot = "9917658261";
+                    google_ad_width = 285;
+                    google_ad_height = 625;
+                </script>
+                <!-- infogempa_home_2 -->
+                <script type="text/javascript"
+                src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+
+                <!-- Ads by google end -->
+            </div>
             </div>
         </div>
