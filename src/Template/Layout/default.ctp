@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Info Gempa Terlengkap</title>
+    <title>Info Gempa Dunia Terlengkap dan Terupdate | InfoGempa.com</title>
     <?= $this->Html->meta('favicon.ico', '/images/favicon.ico', ['type' => 'icon']) ?>
     <?= $this->Html->css('bootstrap.min.css') ?>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">

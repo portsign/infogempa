@@ -59,6 +59,21 @@
                 
                 <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
                 <div id="map-canvas"></div>
+                <br />
+                <!-- Ads By Google -->
+
+                <script type="text/javascript">
+                    google_ad_client = "ca-pub-8007533189697599";
+                    google_ad_slot = "1696387466";
+                    google_ad_width = 500;
+                    google_ad_height = 80;
+                </script>
+                <!-- infogempa_detail_1 -->
+                <script type="text/javascript"
+                src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+
+                <!-- Ads By Google end -->
                 <?php 
                     // debug($nearby);
                     function indonesian_date ($timestamp = '', $date_format = 'l, j F Y | H:i', $suffix = 'WIB') {
