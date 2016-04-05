@@ -8,6 +8,12 @@
     #map {
         height: 100%;
     }
+    .select-country {
+        width: 115px!important;
+    }
+    .select-tsunami {
+        width: 115px!important;
+    }
 </style>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <section id="home-slider">
@@ -65,27 +71,20 @@
     <!--/#home-slider-->
                 <div class="container">
                 <div class="main-slider">
-
+                <div class="col-md-9">
                  <nav class="navbar navbar-default">
-                  <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                      </button>
+                     
                       <a class="navbar-brand" href="#"><strong>Cari Gempa</strong></a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                      
                       <?= $this->Form->create('search', ['url'=>'/search', 'type'=>'get', 'class' => 'navbar-form navbar-left']) ?>
                         <div class="form-group">
                           <input type="text" class="form-control" name="place" value="" placeholder="Cari berdasarkan lokasi">
-                          <select class="form-control" name="country">
+                          <select class="select-country form-control" name="country">
                             <option value="">--country--</option>
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Åland Islands</option>
@@ -119,7 +118,7 @@
                             <option value="Botswana">Botswana</option>
                             <option value="Bouvet Island">Bouvet Island</option>
                             <option value="Brazil">Brazil</option>
-                            <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                            <option value="British Indian Ocean Territory">British Indian O.T</option>
                             <option value="Brunei Darussalam">Brunei Darussalam</option>
                             <option value="Bulgaria">Bulgaria</option>
                             <option value="Burkina Faso">Burkina Faso</option>
@@ -138,7 +137,7 @@
                             <option value="Colombia">Colombia</option>
                             <option value="Comoros">Comoros</option>
                             <option value="Congo">Congo</option>
-                            <option value="Congo, the Democratic Republic of the">Congo, the Democratic Republic of the</option>
+                            <option value="Congo, the Democratic Republic of the">Congo</option>
                             <option value="Cook Islands">Cook Islands</option>
                             <option value="Costa Rica">Costa Rica</option>
                             <option value="Côte d'Ivoire">Côte d'Ivoire</option>
@@ -158,7 +157,7 @@
                             <option value="Eritrea">Eritrea</option>
                             <option value="Estonia">Estonia</option>
                             <option value="Ethiopia">Ethiopia</option>
-                            <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+                            <option value="Falkland Islands (Malvinas)">Falkland Islands</option>
                             <option value="Faroe Islands">Faroe Islands</option>
                             <option value="Fiji">Fiji</option>
                             <option value="Finland">Finland</option>
@@ -183,8 +182,8 @@
                             <option value="Guinea-Bissau">Guinea-Bissau</option>
                             <option value="Guyana">Guyana</option>
                             <option value="Haiti">Haiti</option>
-                            <option value="Heard Island and McDonald Islands">Heard Island and McDonald Islands</option>
-                            <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+                            <option value="Heard Island and McDonald Islands">Heard Island & McDonald Islands</option>
+                            <option value="Holy See (Vatican City State)">Holy See</option>
                             <option value="Honduras">Honduras</option>
                             <option value="Hong Kong">Hong Kong</option>
                             <option value="Hungary">Hungary</option>
@@ -272,10 +271,10 @@
                             <option value="Russian Federation">Russian Federation</option>
                             <option value="Rwanda">Rwanda</option>
                             <option value="Saint Barthélemy">Saint Barthélemy</option>
-                            <option value="Saint Helena, Ascension and Tristan da Cunha">Saint Helena, Ascension and Tristan da Cunha</option>
+                            <option value="Saint Helena, Ascension and Tristan da Cunha">Saint Helena</option>
                             <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
                             <option value="Saint Lucia">Saint Lucia</option>
-                            <option value="Saint Martin (French part)">Saint Martin (French part)</option>
+                            <option value="Saint Martin (French part)">Saint Martin</option>
                             <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
                             <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
                             <option value="Samoa">Samoa</option>
@@ -338,7 +337,7 @@
                             <option value="Zimbabwe">Zimbabwe</option>
                         </select>
                         <select class="form-control" name="skala_richter">
-                            <option value="">--skala-richter--</option>
+                            <option value="">-mag-</option>
                             <option value="1">1 > sr</option>
                             <option value="2">2 > sr</option>
                             <option value="3">3 > sr</option>
@@ -350,16 +349,14 @@
                             <option value="9">9 > sr</option>
                             <option value="10">10 > sr</option>
                         </select>
-                        <select class="form-control" name="tsunami">
-                            <option value="">--potensi tsunami--</option>
+                        <select class="select-tsunami form-control" name="tsunami">
+                            <option value="">-tsunami-</option>
                             <option value="0">tidak berpotensi tsunami</option>
                             <option value="1">berpotensi tsunami</option>
                         </select>
                         </div>
                         <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
                       <?= $this->Form->end() ?>
-                    </div><!-- /.navbar-collapse -->
-                  </div><!-- /.container-fluid -->
                 </nav>
                 <table class="table table-striped table-gempa">
                     <thead>
@@ -438,4 +435,36 @@
                     </div>
                 </center>
             </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                  <div class="panel-heading">Main Menu</div>
+                  <div class="panel-body">
+                    <a href="/">Home</a>
+                  </div>
+                  <div class="panel-body">
+                    <a href="/belajar">Belajar Geologi</a>
+                  </div>
+                  <div class="panel-body">
+                    <a href="/artikel/">News</a>
+                  </div>
+                  <div class="panel-body">
+                    <a href="#contact">Contact</a>
+                  </div>
+                </div>
+                <!-- Ads by google -->
+
+                <script type="text/javascript">
+                    google_ad_client = "ca-pub-8007533189697599";
+                    google_ad_slot = "9917658261";
+                    google_ad_width = 285;
+                    google_ad_height = 625;
+                </script>
+                <!-- infogempa_home_2 -->
+                <script type="text/javascript"
+                src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+
+                <!-- Ads by google end -->
+            </div>
+        </div>
         </div>
