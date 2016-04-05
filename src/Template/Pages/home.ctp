@@ -371,6 +371,40 @@
                     </thead>
                     <tbody>
                     <?php 
+
+                        function indonesian_date ($timestamp = '', $date_format = 'l, j F Y | H:i', $suffix = 'WIB') {
+                            if (trim ($timestamp) == '')
+                            {
+                                $timestamp = time ();
+                            }
+                            elseif (!ctype_digit ($timestamp))
+                            {
+                                $timestamp = strtotime ($timestamp);
+                            }
+                            # remove S (st,nd,rd,th) there are no such things in indonesia :p
+                            $date_format = preg_replace ("/S/", "", $date_format);
+                            $pattern = array (
+                                '/Mon[^day]/','/Tue[^sday]/','/Wed[^nesday]/','/Thu[^rsday]/',
+                                '/Fri[^day]/','/Sat[^urday]/','/Sun[^day]/','/Monday/','/Tuesday/',
+                                '/Wednesday/','/Thursday/','/Friday/','/Saturday/','/Sunday/',
+                                '/Jan[^uary]/','/Feb[^ruary]/','/Mar[^ch]/','/Apr[^il]/','/May/',
+                                '/Jun[^e]/','/Jul[^y]/','/Aug[^ust]/','/Sep[^tember]/','/Oct[^ober]/',
+                                '/Nov[^ember]/','/Dec[^ember]/','/January/','/February/','/March/',
+                                '/April/','/June/','/July/','/August/','/September/','/October/',
+                                '/November/','/December/',
+                            );
+                            $replace = array ( 'Sen','Sel','Rab','Kam','Jum','Sab','Min',
+                                'Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu',
+                                'Jan','Feb','Mar','Apr','Mei','Jun','Jul','Ags','Sep','Okt','Nov','Des',
+                                'Januari','Februari','Maret','April','Juni','Juli','Agustus','Sepember',
+                                'Oktober','November','Desember',
+                            );
+                            $date = date ($date_format, $timestamp);
+                            $date = preg_replace ($pattern, $replace, $date);
+                            $date = "{$date} {$suffix}";
+                            return $date;
+                        } 
+                        date_default_timezone_set('Asia/Jakarta');
                         foreach ($gempa as $value) {
                         $time = substr($value->time, 0, 10);
                         $lokasi = explode(",", $value->place);
@@ -388,7 +422,7 @@
                             <td><strong><a href="/pages/<?= $value->id_gempa.DS.$slug ?>" title="<?= $value->title ?>"><?= $lokasi ?></a></strong></td>
                             <td><strong><a href="/pages/<?= $value->id_gempa.DS.$slug ?>" title="<?= $value->title ?>"><?= $country ?></a></strong></td>
                             <td><?= $value->mag ?></td>
-                            <td><?= date('d/m/Y H:i A', $time) ?></td>
+                            <td><?= indonesian_date($time) ?></td>
                             <td><a href="/pages/<?= $value->id_gempa.DS.$slug ?>" class="btn btn-success" ><i class="fa fa-eye"></i></a></td>
                         </tr>
                     <?php } ?>
