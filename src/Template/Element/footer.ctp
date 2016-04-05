@@ -3,6 +3,8 @@
             <div class="row">
                 <div class="col-sm-12 text-center bottom-separator">
                     <img src="/images/home/under.png" class="img-responsive inline" alt="">
+                    <br />
+                    <p class="disclaimer"><strong>Disclaimer:</strong> Kami mencoba untuk menjaga informasi yang akurat dan terkini, namun Kami tidak dapat menjamin keakuratan informasi.</p>
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <div class="testimonial bottom">

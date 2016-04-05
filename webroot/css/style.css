@@ -18,3 +18,8 @@ nav.navbar {
 tr td strong a {
 	color: #333;
 }
+.disclaimer {
+	width: 500px!important;
+	text-align: center;
+	margin: auto;
+}
