@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="keywords" content="infogempa, info gempa, gempa bumi, gempa dunia, informasi gempa terupdate, info gempa terkini, aplikasi gempa bumi, gempa bumi alert">
+    <link rel="canonical" href="https://infogempa.com/" />
     <title>Info Gempa Dunia Terlengkap dan Terupdate | InfoGempa.com</title>
     <?= $this->Html->meta('favicon.ico', '/images/favicon.ico', ['type' => 'icon']) ?>
     <?= $this->Html->css('bootstrap.min.css') ?>
