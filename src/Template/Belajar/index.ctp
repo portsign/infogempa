@@ -53,6 +53,8 @@
 
                         <?php 
                             foreach ($jsons->posts as $value) {
+                                // debug((array)$value);
+                                // exit;
                                 $title = $value->title;
                                 $content = $value->content;
                                 $author = $value->author->{'name'};
@@ -77,18 +79,18 @@
                                 <div class="post-thumb">
                                     <a href="blogdetails.html"><img src="<?= $thumb ?>" class="img-responsive" style="height:270px;" alt=""></a>
                                     <div class="post-overlay">
-                                        <span class="uppercase"><a href="#"><?= $date ?><br /><small><?= $month ?></small></a></span>
+                                        <span class="uppercase"><a href="<?= $value->url ?>"><?= $date ?><br /><small><?= $month ?></small></a></span>
                                     </div>
                                 </div>
                                 <div class="post-content overflow">
-                                    <h2 class="post-title bold"><a href="#"><?= $title ?></a></h2>
-                                    <h3 class="post-author"><a href="#">Posted by <?= $author ?></a> &nbsp;&nbsp; <small><i><?= $actual_date ?></i></small></h3>
+                                    <h2 class="post-title bold"><a href="<?= $value->url ?>"><?= $title ?></a></h2>
+                                    <h3 class="post-author"><a href="<?= $value->url ?>">Posted by <?= $author ?></a> &nbsp;&nbsp; <small><i><?= $actual_date ?></i></small></h3>
                                     <p><?= $string ?></p>
-                                    <a href="#" class="read-more">View More</a>
+                                    <a href="<?//= $value->url ?>" class="read-more">View More</a>
                                     <div class="post-bottom overflow">
                                         <ul class="nav nav-justified post-nav">
-                                            <li><a href="#"><i class="fa fa-tag"></i><?= $category ?></a></li>
-                                            <li><a href="#"><i class="fa fa-comments"></i><?= $count_comment ?> Comment</a></li>
+                                            <li><a href="https://infogempa.com/artikel/category/<?= $value->categories[0]->{'slug'} ?>"><i class="fa fa-tag"></i><?= $category ?></a></li>
+                                            <li><a href="<?= $value->url ?>#comment"><i class="fa fa-comments"></i><?= $count_comment ?> Comment</a></li>
                                         </ul>
                                     </div>
                                 </div>
