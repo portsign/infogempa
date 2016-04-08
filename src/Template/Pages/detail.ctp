@@ -80,12 +80,9 @@
                 <?php 
                     // debug($nearby);
                     function indonesian_date ($timestamp = '', $date_format = 'l, j F Y | H:i', $suffix = 'WIB') {
-                        if (trim ($timestamp) == '')
-                        {
+                        if (trim ($timestamp) == '') {
                             $timestamp = time ();
-                        }
-                        elseif (!ctype_digit ($timestamp))
-                        {
+                        } elseif (!ctype_digit ($timestamp)) {
                             $timestamp = strtotime ($timestamp);
                         }
                         # remove S (st,nd,rd,th) there are no such things in indonesia :p
@@ -216,9 +213,8 @@
         </div>
     </section>
      <!--/#portfolio-information-->
-     <script>
-
-      function initialize() {
+    <script>
+        function initialize() {
         
             var sv = new google.maps.StreetViewService();
             var geocoder = new google.maps.Geocoder();
@@ -234,8 +230,8 @@
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                     },
                 map = new google.maps.Map( document.getElementById( 'map-canvas' ), myOptions ),
-                marker = new google.maps.Marker( {position: myLatLng, map: map} );
-            
+                marker = new google.maps.Marker( {position: myLatLng, map: map, animation: google.maps.Animation.DROP} );
+                marker.addListener('click', toggleBounce);
             marker.setMap( map );
             moveMarker( map, marker );
 
@@ -302,7 +298,6 @@
                     return false;
                     }
                 });
-                // });
             });
             $('#pano').width(755);
         }
@@ -317,12 +312,17 @@
                 
             }, 1500 );
 
-
         };
 
+        function toggleBounce() {
+            if (marker.getAnimation() !== null) {
+                marker.setAnimation(null);
+            } else {
+                marker.setAnimation(google.maps.Animation.BOUNCE);
+            }
+        }
+
         // initialize();
-            google.maps.event.addDomListener(window, 'load', initialize);
-
-
+        google.maps.event.addDomListener(window, 'load', initialize);
 
     </script>

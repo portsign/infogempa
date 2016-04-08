@@ -16,7 +16,8 @@ html, body {
         map = new google.maps.Map(document.getElementById('map'), {
           center: { lat: 20, lng: -160 },
           zoom: 2,
-          styles: mapStyle
+          styles: mapStyle,
+          mapTypeId: google.maps.MapTypeId.SATELLITE
         });
 
         map.data.setStyle(styleFeature);

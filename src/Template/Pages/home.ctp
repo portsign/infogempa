@@ -14,6 +14,11 @@
     .select-tsunami {
         width: 115px!important;
     }
+    h3 {
+        margin-top: 2px;
+        font-size: 16px;
+        font-weight: 500;
+    }
 </style>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <section id="home-slider">
@@ -416,11 +421,11 @@
                         $slug = strtolower(str_replace(' ', '-', $lokasi)).'.html';
                     ?>
                         <tr>
-                            <td><strong><a href="/pages/<?= $value->id_gempa.DS.$slug ?>" title="<?= $value->title ?>"><?= $lokasi ?></a></strong></td>
+                            <td><strong><h3><i class="glyphicon glyphicon-map-marker"></i> &nbsp;&nbsp;&nbsp;<a href="/pages/<?= $value->id_gempa.DS.$slug ?>" title="<?= $value->title ?>"><?= $lokasi ?></a></h3></strong></td>
                             <td><strong><a href="/pages/<?= $value->id_gempa.DS.$slug ?>" title="<?= $value->title ?>"><?= $country ?></a></strong></td>
                             <td><?= $value->mag ?></td>
                             <td><?= indonesian_date($time) ?></td>
-                            <td><a href="/pages/<?= $value->id_gempa.DS.$slug ?>" class="btn btn-success" ><i class="fa fa-eye"></i></a></td>
+                            <td><a href="/pages/<?= $value->id_gempa.DS.$slug ?>" title="lihat detail gempa" class="btn btn-success" ><i class="fa fa-eye"></i></a></td>
                         </tr>
                     <?php } ?>
                     </tbody>
