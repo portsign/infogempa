@@ -32,6 +32,9 @@
     width: auto;
     max-width: 420px;
 }
+.bold {
+    font-size: 26px;
+}
 </style>
 <section id="page-breadcrumb">
         <div class="vertical-center sun">
@@ -39,7 +42,7 @@
                 <div class="row">
                     <div class="action">
                         <div class="col-sm-12">
-                            <h1 class="title bg-text"><strong>Detail Gempa</strong></h1>
+                            <h2 class="title bg-text"><strong>Detail Gempa</strong></h2>
                             <p id="appendTitle" class="bg-text-lokasi"></p>
                         </div>
                     </div>
@@ -147,7 +150,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="project-name overflow">
-                        <h2 class="bold"><strong><?= $val_gempa->title ?></strong></h2>
+                        <h1 class="bold"><strong><?= $val_gempa->title ?></strong></h1>
                         <ul class="nav navbar-nav navbar-default">
                             <li><a href="#"><i class="fa fa-clock-o"></i><?= indonesian_date($time) ?></a></li>
                             <li><a href="#"><i class="fa fa-tag"></i><?= $val_gempa->type ?></a></li>
