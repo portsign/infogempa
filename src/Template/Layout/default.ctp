@@ -10,6 +10,15 @@
     <link rel="canonical" href="https://infogempa.com/" />
     <title>Info Gempa Dunia Terlengkap dan Terupdate | InfoGempa.com</title>
     <?= $this->Html->meta('favicon.ico', '/images/favicon.ico', ['type' => 'icon']) ?>
+    <meta property="og:locale" content="id_ID"/>
+    <meta property="og:locale:alternate" content="en_US"/>
+    <meta property="og:locale:alternate" content="en_GB"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Info Gempa Dunia | Informasi Gempa Bumi Dunia | infogempa.com"/>
+    <meta property="og:description" content="Info Gempa | Kami menyediakan informasi mengenai gempa bumi yang terjadi di dunia. untuk mendapatkan informasi secara update silahkan subscribe"/>
+    <meta property="og:image" content="https://infogempa.com/artikel/wp-content/uploads/2016/04/Damage-from-an-earthquake-007.jpg"/>
+    <meta property="og:url" content="https://infogempa.com/"/>
+    <meta property="og:site_name" content="Infogempa"/>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
