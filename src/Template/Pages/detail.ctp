@@ -20,7 +20,7 @@
 .bg-text-lokasi {
     color: white!important;
     height:41px;
-    padding-top: 0px!important;
+    padding-top: -2px!important;
     font: bold 24px/45px Helvetica, Sans-Serif;
     background: rgb(0, 0, 0);
     background: rgba(0, 0, 0, 0.7);
@@ -42,8 +42,8 @@
                 <div class="row">
                     <div class="action">
                         <div class="col-sm-12">
-                            <h2 class="title bg-text"><strong>Detail Gempa</strong></h2>
-                            <p id="appendTitle" class="bg-text-lokasi"></p>
+                            <span class="title bg-text"><strong>Detail Gempa</strong></span><br />
+                            <span id="appendTitle" class="bg-text-lokasi"></span>
                         </div>
                     </div>
                 </div>
