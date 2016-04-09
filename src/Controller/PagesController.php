@@ -32,6 +32,7 @@ class PagesController extends AppController
     {
         parent::initialize();
         $this->loadComponent('Paginator');
+        $this->loadComponent('RequestHandler');
     }
     
     /**
@@ -77,6 +78,19 @@ class PagesController extends AppController
             }
             throw new NotFoundException();
         }
+    }
+    public function sitemap() 
+    {
+        $this->RequestHandler->ext = 'xml';
+        $this->loadModel('Gempa');
+        $this->paginate = [
+            'order' => [
+                'Gempa.time' => 'DESC'
+            ]
+        ];
+        $gempa = $this->paginate($this->Gempa);
+        $this->set(compact('gempa'));
+        $this->set('_serialize', ['gempa']);
     }
     public function detail($id=null, $slug=null)
     {
