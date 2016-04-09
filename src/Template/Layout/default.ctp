@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <meta name="keywords" content="infogempa, info gempa, gempa bumi, gempa dunia, informasi gempa terupdate, info gempa terkini, aplikasi gempa bumi, gempa bumi alert">
     <link rel="canonical" href="https://infogempa.com/" />
-    <title>Info Gempa Dunia Terlengkap dan Terupdate | InfoGempa.com</title>
+    <title><?= $title; ?></title>
     <?= $this->Html->meta('favicon.ico', '/images/favicon.ico', ['type' => 'icon']) ?>
     <meta property="og:locale" content="id_ID"/>
     <meta property="og:locale:alternate" content="en_US"/>

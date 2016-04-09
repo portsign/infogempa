@@ -43,17 +43,9 @@ class PagesController extends AppController
      */
     public function display()
     {
-        // debug($this->request->query['subscribe']);
-        // exit;
-        // if ($this->request->query['subscribe']=='true') {
-            
-        // }
         $path = func_get_args();
 
         $this->loadModel('Gempa');
-        // $gempa = $this->paginate($this->Gempa, [
-        //     'order' => ['Gempa.created' => 'DESC']
-        // ]);
 
         $this->paginate = [
             'order' => [
@@ -74,7 +66,8 @@ class PagesController extends AppController
         if (!empty($path[1])) {
             $subpage = $path[1];
         }
-        $this->set(compact('page', 'subpage', 'gempa'));
+        $title = 'Info Gempa Dunia | Informasi Gempa Bumi Dunia | infogempa.com';
+        $this->set(compact('page', 'subpage', 'gempa', 'title'));
 
         try {
             $this->render(implode('/', $path));
@@ -92,10 +85,15 @@ class PagesController extends AppController
         $gempa = $this->Gempa->find('all', [
             'conditions' => [ 'Gempa.id_gempa' => $id ]
         ])->all(); 
+
+        foreach ($gempa as $get_data) {
+            $title = $get_data->title.' '.$get_data->mag.' Skala Richter | infogempa.com';
+        }
         $nearby = $this->NearbyCities->find('all', [
             'conditions' => [ 'NearbyCities.id_gempa' => $id ]
-        ])->all();       
-        $this->set(compact('gempa', 'nearby'));
+        ])->all();     
+
+        $this->set(compact('gempa', 'nearby', 'title'));
     }
     public function search($place='', $country='', $skala_richter=null, $tsunami=null) 
     {
@@ -128,9 +126,12 @@ class PagesController extends AppController
             'conditions' => [$condition],
             'order' => ['Gempa.created' => 'DESC']
         ];
+
+        $title = 'Info Gempa Dunia | Informasi Gempa Bumi Dunia | infogempa.com';
+
         $gempa = $this->paginate($this->Gempa);
 
-        $this->set(compact('gempa'));
+        $this->set(compact('gempa','title'));
     }
 
     public function subscribe()
@@ -185,10 +186,12 @@ class PagesController extends AppController
     }
     public function privacyPolicy() 
     {
-
+        $title = 'Info Gempa Dunia | Informasi Gempa Bumi Dunia | infogempa.com';
+        $this->set(compact('title'));
     }
     public function dmca() 
     {
-        
+        $title = 'Info Gempa Dunia | Informasi Gempa Bumi Dunia | infogempa.com';
+        $this->set(compact('title'));
     }
 }

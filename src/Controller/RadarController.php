@@ -7,6 +7,7 @@ class RadarController extends AppController
 {
 	public function index()
     {
-
+    	$title = 'Info Gempa Dunia | Radar Pendeteksi Gempa | infogempa.com';
+    	$this->set(compact('title'));
     }
 }
