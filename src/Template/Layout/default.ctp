@@ -19,6 +19,7 @@
     <meta property="og:image:secure_url" content="https://infogempa.com/artikel/wp-content/uploads/2016/04/Damage-from-an-earthquake-007.jpg"/>
     <meta property="og:url" content="https://infogempa.com/"/>
     <meta property="og:site_name" content="Infogempa"/>
+    <meta name="google-site-verification" content="WESXEFyXT-FfMwscd1hY5RbYwO7v5NynJl3uvrwoeIY" />
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
