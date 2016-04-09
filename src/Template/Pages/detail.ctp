@@ -35,6 +35,9 @@
 .bold {
     font-size: 26px;
 }
+.jalur-evakuasi {
+    margin-left: -10px;
+}
 </style>
 <section id="page-breadcrumb">
         <div class="vertical-center sun">
@@ -162,7 +165,6 @@
 
                         <?php 
                             foreach ($nearby as $nearby_cities) {
-                                // debug($nearby_cities->distance.'Km dari '.$nearby_cities->name.' dengan jumlah penduduk '.$nearby_cities->population.' Jiwa');
                         ?>
                             <li><i class="fa fa-angle-right"></i><strong><?= $nearby_cities->distance.'Km</strong> dari '.$nearby_cities->name.' dengan jumlah penduduk <strong>'.$nearby_cities->population.' Jiwa</strong>' ?></li>
                         <?php  
@@ -171,6 +173,10 @@
 
                         </ul>
                     </div>
+
+                    <a href="#" class="btn uppercase jalur-evakuasi" data-toggle="modal" data-target=".bs-example-modal-lg-evakuasi"><i class="fa fa-map-o"></i>  Jalur Evakuasi Tsunami</a>
+
+
                     <div class="skills overflow">
                         <h3>Other Info:</h3>
                         <ul class="nav navbar-nav navbar-default">
@@ -204,6 +210,18 @@
                         </div>
                       </div>
                     </div>
+
+                    <!-- Jalur evakuasi tsunami -->
+
+                    <div id="sv_modal" class="modal fade bs-example-modal-lg-evakuasi" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content" style="padding: 10px;">
+                            <h3>Jalur Evakuasi Tsunami</h3>
+                            <p>Fitur Ini sedang dikembangkan!</p>
+                        </div>
+                      </div>
+                    </div>
+
                     <br />
                     <small><i>Sumber : <a href="http://earthquake.usgs.gov/">earthquake.usgs.gov</i></small>
                     <br />
