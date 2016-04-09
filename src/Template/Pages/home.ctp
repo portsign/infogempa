@@ -50,43 +50,43 @@
         <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
     </section>
     <script>
-      var map;
+    var map;
 
-        function initMap() {
-          map = new google.maps.Map(document.getElementById('map'), {
+    function initMap() 
+    {
+        map = new google.maps.Map(document.getElementById('map'), {
             center: { lat: 20, lng: -160 },
             zoom: 2
-          });
+        });
 
-          // Get the earthquake data (JSONP format)
-          // This feed is a copy from the USGS feed, you can find the originals here:
-          //   http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
-          var script = document.createElement('script');
-          script.setAttribute('src',
-            'https://storage.googleapis.com/maps-devrel/quakes.geo.json');
-          document.getElementsByTagName('head')[0].appendChild(script);
-        }
+        // Get the earthquake data (JSONP format)
+        // This feed is a copy from the USGS feed, you can find the originals here:
+        //   http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
+        var script = document.createElement('script');
+        script.setAttribute('src',
+        'https://storage.googleapis.com/maps-devrel/quakes.geo.json');
+        document.getElementsByTagName('head')[0].appendChild(script);
+    }
 
-        // Defines the callback function referenced in the jsonp file.
-        function eqfeed_callback(data) {
-          map.data.addGeoJson(data);
-        }
+    // Defines the callback function referenced in the jsonp file.
+    function eqfeed_callback(data) {
+        map.data.addGeoJson(data);
+    }
     </script>
     
     <!--/#home-slider-->
-                <div class="container">
-                <div class="main-slider">
-                <div class="col-md-9">
-                 <nav class="navbar navbar-default">
+    <div class="container">
+        <div class="main-slider">
+            <div class="col-md-9">
+                <nav class="navbar navbar-default">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                     
-                      <a class="navbar-brand" href="#"><strong>Cari Gempa</strong></a>
+                        <a class="navbar-brand" href="#"><strong>Cari Gempa</strong></a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                      
-                      <?= $this->Form->create('search', ['url'=>'/search', 'type'=>'get', 'class' => 'navbar-form navbar-left']) ?>
+                    <?= $this->Form->create('search', ['url'=>'/search', 'type'=>'get', 'class' => 'navbar-form navbar-left']) ?>
                         <div class="form-group">
                           <input type="text" class="form-control" name="place" value="" placeholder="Cari berdasarkan lokasi">
                           <select class="select-country form-control" name="country">
@@ -470,6 +470,6 @@
                 </script>
 
                 <!-- Ads by google end -->
-            </div>
         </div>
-        </div>
+    </div>
+</div>
