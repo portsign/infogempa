@@ -87,7 +87,7 @@ class PagesController extends AppController
             'order' => [
                 'Gempa.time' => 'DESC'
             ],
-            'limit' => 18
+            'limit' => 10
         ];
         $gempa = $this->paginate($this->Gempa);
         $this->set(compact('gempa'));
