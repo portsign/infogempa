@@ -35,7 +35,9 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/privacy-policy', ['controller' => 'Pages', 'action' => 'privacyPolicy']);
     $routes->connect('/dmca', ['controller' => 'Pages', 'action' => 'dmca']);
     $routes->connect('/news', ['controller' => 'Pages', 'action' => 'news']);
+    $routes->connect('/sitemap', ['controller' => 'Pages', 'action' => 'sitemap']);
     $routes->connect('/sitemap.xml', ['controller' => 'Pages', 'action' => 'sitemap']);
+    $routes->connect('/berita/:slug.html', ['controller' => 'Berita', 'action' => 'detail']);
     $routes->connect(
         '/pages/:id/:slug',
         ['controller' => 'Pages', 'action' => 'detail'],

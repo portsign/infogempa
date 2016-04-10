@@ -450,7 +450,7 @@
                     <a href="/belajar">Belajar Geologi</a>
                   </div>
                   <div class="panel-body">
-                    <a href="/artikel/">News</a>
+                    <a href="/berita/">Berita</a>
                   </div>
                   <div class="panel-body">
                     <a href="#contact">Contact</a>
