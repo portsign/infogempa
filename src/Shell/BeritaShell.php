@@ -124,7 +124,10 @@ class BeritaShell extends Shell
                         $time = date('Y-m-d H:i:s', $date);
 
                         $article = $this->Articles->find('all',[
-                            'condition' => [ 'Articles.title' => '%'.$title.'%' ],
+                            'condition' => [ 
+                                'Articles.title' => '%'.$title.'%', 
+                                'Articles.slug' => '%'.$slug.'%'
+                            ],
                             'limit' => 1
                         ])->all();
 
