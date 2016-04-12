@@ -16,7 +16,7 @@
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="Info Gempa Dunia | Informasi Gempa Bumi Dunia | infogempa.com"/>
     <meta property="og:description" content="Info Gempa | Kami menyediakan informasi mengenai gempa bumi yang terjadi di dunia. untuk mendapatkan informasi secara update silahkan subscribe"/>
-    <meta property="og:image:secure_url" content="https://infogempa.com/artikel/wp-content/uploads/2016/04/Damage-from-an-earthquake-007.jpg"/>
+    <meta property="og:image:secure_url" content="https://infogempa.com/artikel/wp-content/uploads/2016/04/DeepinScreenshot20160412215908.png"/>
     <meta property="og:url" content="https://infogempa.com/"/>
     <meta property="og:site_name" content="Infogempa"/>
     <meta name="google-site-verification" content="WESXEFyXT-FfMwscd1hY5RbYwO7v5NynJl3uvrwoeIY" />
@@ -63,6 +63,12 @@
             }
         });
     </script>
-
+    <script>
+        $(document).ready(function(){
+            $('.jalur-evakuasi').on('click', function(){
+                $('#evakuasi').fadeToggle();
+            });
+        });
+    </script>
 </body>
 </html>
