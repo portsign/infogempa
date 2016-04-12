@@ -14,7 +14,7 @@
     <meta property="og:locale:alternate" content="en_US"/>
     <meta property="og:locale:alternate" content="en_GB"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:title" content="Info Gempa Dunia | Informasi Gempa Bumi Dunia | infogempa.com"/>
+    <meta property="og:title" content="<?= $title; ?>"/>
     <meta property="og:description" content="Info Gempa | Kami menyediakan informasi mengenai gempa bumi yang terjadi di dunia. untuk mendapatkan informasi secara update silahkan subscribe"/>
     <meta property="og:image:secure_url" content="https://infogempa.com/artikel/wp-content/uploads/2016/04/DeepinScreenshot20160412215908.png"/>
     <meta property="og:url" content="https://infogempa.com/"/>
