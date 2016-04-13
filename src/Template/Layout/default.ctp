@@ -4,7 +4,7 @@
     <?= $this->Html->charset() ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="<?= $meta_desc ?>">
     <meta name="author" content="">
     <meta name="keywords" content="infogempa, info gempa, gempa bumi, gempa dunia, informasi gempa terupdate, info gempa terkini, aplikasi gempa bumi, gempa bumi alert">
     <link rel="canonical" href="https://infogempa.com/" />

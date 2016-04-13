@@ -16,7 +16,8 @@ class BeritaController extends AppController
         ];
         $article = $this->paginate($this->Articles);
         $title = 'Info Gempa Dunia | Berita Gempa Bumi Indonesia | infogempa.com';
-        $this->set(compact('article', 'title'));
+        $meta_desc = 'Info Gempa | Kami menyediakan informasi mengenai gempa bumi yang terjadi di dunia. untuk mendapatkan informasi secara update silahkan subscribe';
+        $this->set(compact('article', 'title', 'meta_desc'));
     }
     public function detail()
     {
@@ -30,10 +31,19 @@ class BeritaController extends AppController
 
         foreach ($detail as $details) {
         	$seo_title = $details->title;
+            $content = $details->content;
+            $string = strip_tags($content);
+
+            if (strlen($string) > 167) {
+                $stringCut = substr($string, 0, 167);
+                $string = substr($stringCut, 0, strrpos($stringCut, ' ')); 
+            }
         }
 
         $title = $seo_title.' | infogempa.com';
-        $this->set(compact('detail','title'));
+        $meta_desc = $string;
+
+        $this->set(compact('detail','title', 'meta_desc'));
         
     }
 }

@@ -68,7 +68,8 @@ class PagesController extends AppController
             $subpage = $path[1];
         }
         $title = 'Info Gempa Dunia | Informasi Gempa Bumi Dunia | infogempa.com';
-        $this->set(compact('page', 'subpage', 'gempa', 'title'));
+        $meta_desc = 'Info Gempa | Kami menyediakan informasi mengenai gempa bumi yang terjadi di dunia. untuk mendapatkan informasi secara update silahkan subscribe';
+        $this->set(compact('page', 'subpage', 'gempa', 'title', 'meta_desc'));
 
         try {
             $this->render(implode('/', $path));
@@ -101,14 +102,46 @@ class PagesController extends AppController
             'conditions' => [ 'Gempa.id_gempa' => $id ]
         ])->all(); 
 
+        function indonesian_date ($timestamp = '', $date_format = 'l, j F Y | H:i', $suffix = 'WIB') {
+            if (trim ($timestamp) == '') {
+                $timestamp = time ();
+            } elseif (!ctype_digit ($timestamp)) {
+                $timestamp = strtotime ($timestamp);
+            }
+            # remove S (st,nd,rd,th) there are no such things in indonesia :p
+            $date_format = preg_replace ("/S/", "", $date_format);
+            $pattern = array (
+                '/Mon[^day]/','/Tue[^sday]/','/Wed[^nesday]/','/Thu[^rsday]/',
+                '/Fri[^day]/','/Sat[^urday]/','/Sun[^day]/','/Monday/','/Tuesday/',
+                '/Wednesday/','/Thursday/','/Friday/','/Saturday/','/Sunday/',
+                '/Jan[^uary]/','/Feb[^ruary]/','/Mar[^ch]/','/Apr[^il]/','/May/',
+                '/Jun[^e]/','/Jul[^y]/','/Aug[^ust]/','/Sep[^tember]/','/Oct[^ober]/',
+                '/Nov[^ember]/','/Dec[^ember]/','/January/','/February/','/March/',
+                '/April/','/June/','/July/','/August/','/September/','/October/',
+                '/November/','/December/',
+            );
+            $replace = array ( 'Sen','Sel','Rab','Kam','Jum','Sab','Min',
+                'Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu',
+                'Jan','Feb','Mar','Apr','Mei','Jun','Jul','Ags','Sep','Okt','Nov','Des',
+                'Januari','Februari','Maret','April','Juni','Juli','Agustus','Sepember',
+                'Oktober','November','Desember',
+            );
+            $date = date ($date_format, $timestamp);
+            $date = preg_replace ($pattern, $replace, $date);
+            $date = "{$date} {$suffix}";
+            return $date;
+        }
+
         foreach ($gempa as $get_data) {
             $title = $get_data->title.' '.$get_data->mag.' Skala Richter | infogempa.com';
+            $time = substr($get_data->time, 0, 10);
+            $meta_desc = 'Sebuah Gempa terjadi pada wilayah '.$get_data->place.' pada hari '.indonesian_date($time).', gempa ini berkekuatan hingga '.$get_data->mag.'';
         }
         $nearby = $this->NearbyCities->find('all', [
             'conditions' => [ 'NearbyCities.id_gempa' => $id ]
         ])->all();     
 
-        $this->set(compact('gempa', 'nearby', 'title'));
+        $this->set(compact('gempa', 'nearby', 'title', 'meta_desc'));
     }
     public function search($place='', $country='', $skala_richter=null, $tsunami=null) 
     {
@@ -143,10 +176,11 @@ class PagesController extends AppController
         ];
 
         $title = 'Info Gempa Dunia | Informasi Gempa Bumi Dunia | infogempa.com';
+        $meta_desc = 'Info Gempa | Kami menyediakan informasi mengenai gempa bumi yang terjadi di dunia. untuk mendapatkan informasi secara update silahkan subscribe';
 
         $gempa = $this->paginate($this->Gempa);
 
-        $this->set(compact('gempa','title'));
+        $this->set(compact('gempa','title','meta_desc'));
     }
 
     public function subscribe()
@@ -202,12 +236,14 @@ class PagesController extends AppController
     public function privacyPolicy() 
     {
         $title = 'Info Gempa Dunia | Informasi Gempa Bumi Dunia | infogempa.com';
-        $this->set(compact('title'));
+        $meta_desc = 'Info Gempa | Kami menyediakan informasi mengenai gempa bumi yang terjadi di dunia. untuk mendapatkan informasi secara update silahkan subscribe';
+        $this->set(compact('title','meta_desc'));
     }
     public function dmca() 
     {
         $title = 'Info Gempa Dunia | Informasi Gempa Bumi Dunia | infogempa.com';
-        $this->set(compact('title'));
+        $meta_desc = 'Info Gempa | Kami menyediakan informasi mengenai gempa bumi yang terjadi di dunia. untuk mendapatkan informasi secara update silahkan subscribe';
+        $this->set(compact('title','meta_desc'));
     }
     public function news()
     {

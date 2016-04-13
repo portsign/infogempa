@@ -11,8 +11,8 @@ class BelajarController extends AppController
         $jsons = json_decode($content);
 
         $title = 'Info Gempa Dunia | Belajar Geologi dan Geofisika | infogempa.com';
-
-        $this->set(compact('jsons','title'));
+        $meta_desc = 'Info Gempa | Kami menyediakan informasi mengenai gempa bumi yang terjadi di dunia. untuk mendapatkan informasi secara update silahkan subscribe';
+        $this->set(compact('jsons','title','meta_desc'));
         $this->set('_serialize', ['gempa']);
     }
 }
