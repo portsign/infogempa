@@ -105,7 +105,6 @@ class BeritaShell extends Shell
             $rand_keys = array_rand($input, 2);
 
             // ini thumbnail
-            // echo $input[$rand_keys[1]] . "\n";
             $thumb = $input[$rand_keys[1]];
 
             foreach($content->find('div.content-hardnews') as $div) {
@@ -131,7 +130,7 @@ class BeritaShell extends Shell
                             'limit' => 1
                         ])->all();
 
-                        $value = [];
+                        // $value = [];
                         foreach ($article as $value) {
                         }
                             if ($value->title == $title) {
@@ -141,7 +140,7 @@ class BeritaShell extends Shell
                             } else {
                                 // QUERY SAVE DATA BARU
 
-                                $data = [];
+                                // $data = [];
                                 $data['title'] = $title;
                                 $data['thumbnail'] = $thumb;
                                 $data['content'] = $konten;
