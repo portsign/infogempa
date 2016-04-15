@@ -83,6 +83,7 @@ class PagesController extends AppController
     public function sitemap() 
     {
         $this->RequestHandler->ext = 'xml';
+        $this->viewBuilder()->layout('sitemap');
         $this->loadModel('Gempa');
         $this->paginate = [
             'order' => [
@@ -91,7 +92,19 @@ class PagesController extends AppController
             'limit' => 18
         ];
         $gempa = $this->paginate($this->Gempa);
-        $this->set(compact('gempa'));
+
+        foreach ($gempa as $gem) {
+            $slug = preg_replace('/[^a-zA-Z0-9\']/', '-', $gem->place);
+            $time = substr($gem->time, 0, 10);
+
+            $data = [];
+            $data['loc'] = '/pages/'.$gem->id_gempa.DS.$slug.'.html';
+            $data['changefreq_1'] = 'daily';
+            $data['lastmod'] = date('Y-m-d H:i:s', $time);
+            $data['changefreq_2'] = 'weekly';
+        }
+
+        $this->set(compact('data'));
         $this->set('_serialize', ['gempa']);
     }
     public function detail($id=null, $slug=null)
@@ -397,4 +410,27 @@ class PagesController extends AppController
             }
         }
     }
+
+
+    public function secure_src()
+    {
+        header("Content-Type: image/jpeg");
+        $url = $_GET['url'];
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_BINARYTRANSFER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT ,0);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.1 Safari/537.11');
+        $res = curl_exec($ch);
+        $rescode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch) ;
+        echo $res;
+    }
+
+
 }

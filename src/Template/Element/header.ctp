@@ -6,7 +6,7 @@
                     <ul class="nav nav-pills">
                         <li><a href="https://www.facebook.com/Info-Gempa-1707752839494850/"><i class="fa fa-facebook"></i></a></li>
                         <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="https://plus.google.com/b/101362726249214736334/101362726249214736334"><i class="fa fa-google-plus"></i></a></li>
                         <li><a href=""><i class="fa fa-dribbble"></i></a></li>
                         <li><a href=""><i class="fa fa-linkedin"></i></a></li>
                     </ul>
