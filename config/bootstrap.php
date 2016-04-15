@@ -192,6 +192,13 @@ Request::addDetector('tablet', function ($request) {
 
 Plugin::load('Migrations');
 
+Configure::write('Dispatcher.filters', array(
+    'AssetDispatcher',
+    'CacheDispatcher'
+));
+Plugin::load('AssetCompress', array('bootstrap' => true));
+Plugin::load('WyriHaximus/MinifyHtml', ['bootstrap' => true]);
+
 // Only try to load DebugKit in development mode
 // Debug Kit should not be installed on a production system
 if (Configure::read('debug')) {

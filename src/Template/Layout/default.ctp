@@ -35,13 +35,8 @@
         ga('create', 'UA-76128729-1', 'auto');
         ga('send', 'pageview');
     </script>
-    <?= $this->Html->css('bootstrap.min.css') ?>
+    <?= $this->AssetCompress->css('css-combined'); ?>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <?= $this->Html->css('animate.min.css') ?>
-    <?= $this->Html->css('lightbox.css') ?>
-    <?= $this->Html->css('main.css') ?>
-    <?= $this->Html->css('responsive.css') ?>
-    <?= $this->Html->css('style.css') ?>
 </head>
 <body>
     
@@ -49,18 +44,13 @@
     <?= $this->fetch('content') ?>
     <?= $this->element('footer') ?>
     
-    <?= $this->Html->script('jquery.js') ?>
-    <?= $this->Html->script('bootstrap.min.js') ?>
-    <?= $this->Html->script('lightbox.min.js') ?>
-    <?= $this->Html->script('wow.min.js') ?>
-    <?= $this->Html->script('main.js') ?>
+    <?= $this->AssetCompress->script('js-combined'); ?>
     <script type="text/javascript">
         $(document).ready(function(){
             $('.bold>').clone().appendTo('#appendTitle');
             $('#appendTitle').css({'font-size':'14px', 'color':'#888'})
         });
-    </script>
-    <script type="text/javascript">
+ 
         var email = $('#email').val();
         $('#email').on('change keypress keyup keydown paste', function(){
             if ($('#email').val().length==0) {
@@ -69,8 +59,7 @@
                 $('.g-recaptcha').removeClass('hidden');
             }
         });
-    </script>
-    <script>
+        
         $(document).ready(function(){
             $('.jalur-evakuasi').on('click', function(){
                 $('#evakuasi').fadeToggle();
@@ -78,7 +67,6 @@
         });
     </script>
 
-    <!-- Histats.com  START (hidden counter)-->
     <script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
     <a href="http://www.histats.com" target="_blank" title="counter easy hit" >
     <script  type="text/javascript" >
@@ -89,6 +77,5 @@
     <noscript>
         <a href="/secsrc?url=http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?3408822&101" alt="counter easy hit" border="0"></a>
     </noscript>
-    <!-- Histats.com  END  -->
 </body>
 </html>
