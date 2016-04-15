@@ -67,7 +67,7 @@
         });
     </script>
 
-    <script type="text/javascript">document.write(unescape("<script src='/secsrc?url=http://s10.histats.com/js15.js' type='text/javascript'>));</script>
+    <script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
     <a href="http://www.histats.com" target="_blank" title="counter easy hit" >
     <script  type="text/javascript" >
         try {Histats.start(1,3408822,4,0,0,0,"");
@@ -75,7 +75,7 @@
     </script>
     </a>
     <noscript>
-        <a href="/secsrc?url=http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?3408822&101" alt="counter easy hit" border="0"></a>
+        <a href="/secsrc?url=http://www.histats.com" target="_blank"><img  src="/secsrc?url=http://sstatic1.histats.com/0.gif?3408822&101" alt="counter easy hit" border="0"></a>
     </noscript>
 </body>
 </html>
