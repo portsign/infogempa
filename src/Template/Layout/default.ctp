@@ -67,7 +67,6 @@
         });
     </script>
 
-    <script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
     <a href="http://www.histats.com" target="_blank" title="counter easy hit" >
     <script  type="text/javascript" >
         try {Histats.start(1,3408822,4,0,0,0,"");
