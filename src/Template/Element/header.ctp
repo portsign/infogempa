@@ -31,7 +31,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="/">Home</a></li>
                     <li><a href="/belajar">Belajar Geologi</a></li>                    
-                    <li><a href="/berita">Berita</a></li>                    
+                    <li><a href="/artikel">Berita</a></li>                    
                     <li><a href="/dmca">DMCA</a></li>                    
                     <li><a href="/privacy-policy">Privacy Policy</a></li>                    
                     <li><a href="#contact">Contact</a></li>                    
