@@ -28,6 +28,7 @@ use Cake\Event\Event;
 class AppController extends Controller
 {
 
+    public $helpers = array ('AssetCompress.AssetCompress');
     /**
      * Initialization hook method.
      *
@@ -59,4 +60,5 @@ class AppController extends Controller
             $this->set('_serialize', true);
         }
     }
+    
 }
