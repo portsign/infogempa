@@ -25,7 +25,7 @@
     <meta property="og:locale:alternate" content="en_US"/>
     <meta property="og:locale:alternate" content="en_GB"/>
     <meta property="og:type" content="website"/>
-    <?= $this->Html->meta('favicon.ico', '/images/favicon.ico', ['type' => 'icon']) ?>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <meta name="google-site-verification" content="WESXEFyXT-FfMwscd1hY5RbYwO7v5NynJl3uvrwoeIY" />
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
