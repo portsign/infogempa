@@ -1,55 +1,56 @@
-<?php
-/**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @since         0.10.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
-
-$cakeDescription = 'CakePHP: the rapid development php framework';
-?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <?= $this->Html->charset() ?>
-    <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
-    </title>
-    <?= $this->Html->meta('icon') ?>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>404 Error | Triangle</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet"> 
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
 
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('cake.css') ?>
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
 
-    <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
-</head>
 <body>
-    <div id="container">
-        <div id="header">
-            <h1><?= $this->Html->link($cakeDescription, 'http://cakephp.org') ?></h1>
+    <section id="error-page">
+        <div class="error-page-inner">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="text-center">
+                            <div class="bg-404">
+                                <div class="error-image">                                
+                                    <img class="img-responsive" src="/images/404.png" alt="">  
+                                </div>
+                            </div>
+                            <h2>PAGE NOT FOUND</h2>
+                            <p>The page you are looking for might have been removed, had its name changed.</p>
+                            <a href="/" class="btn btn-error">RETURN TO THE HOMEPAGE</a>
+                            <div class="social-link">
+                                <span><a href="#"><i class="fa fa-facebook"></i></a></span>
+                                <span><a href="#"><i class="fa fa-twitter"></i></a></span>
+                                <span><a href="#"><i class="fa fa-google-plus"></i></a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="content">
-            <?= $this->Flash->render() ?>
-
-            <?= $this->fetch('content') ?>
-        </div>
-        <div id="footer">
-            <?= $this->Html->link(
-                    $this->Html->image('cake.power.gif', ['alt' => $cakeDescription, 'border' => '0']),
-                    'http://www.cakephp.org/',
-                    ['target' => '_blank', 'escape' => false]
-                )
-            ?>
-        </div>
-    </div>
+    </section>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/wow.min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>
