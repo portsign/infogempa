@@ -82,29 +82,18 @@ class PagesController extends AppController
     }
     public function sitemap() 
     {
-        $this->RequestHandler->ext = 'xml';
+        // $this->RequestHandler->ext = 'xml';
         $this->viewBuilder()->layout('sitemap');
         $this->loadModel('Gempa');
         $this->paginate = [
             'order' => [
                 'Gempa.time' => 'DESC'
             ],
-            'limit' => 18
+            'limit' => 60
         ];
         $gempa = $this->paginate($this->Gempa);
 
-        foreach ($gempa as $gem) {
-            $slug = preg_replace('/[^a-zA-Z0-9\']/', '-', $gem->place);
-            $time = substr($gem->time, 0, 10);
-
-            $data = [];
-            $data['loc'] = '/pages/'.$gem->id_gempa.DS.$slug.'.html';
-            $data['changefreq_1'] = 'daily';
-            $data['lastmod'] = date('Y-m-d H:i:s', $time);
-            $data['changefreq_2'] = 'weekly';
-        }
-
-        $this->set(compact('data'));
+        $this->set(compact('gempa'));
         $this->set('_serialize', ['gempa']);
     }
     public function detail($id=null, $slug=null)
