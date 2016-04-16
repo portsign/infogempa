@@ -8,10 +8,11 @@
     <title><?= $title; ?></title>
     <?= $this->Html->charset() ?>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-XSS-Protection" content="0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="<?= $title; ?>" />
     <meta name="description" content="<?= $meta_desc ?>">
-    <meta name="keywords" content="infogempa, info gempa, gempa bumi, gempa dunia, informasi gempa terupdate, info gempa terkini, aplikasi gempa bumi, gempa bumi alert">
+    <meta name="keywords" content="info gempa dunia, infogempa, info gempa, gempa bumi, gempa dunia, informasi gempa terupdate, info gempa terkini, aplikasi gempa bumi, gempa bumi alert">
     <meta name="format-detection" content="telephone=no">
     <link rel="canonical" href="https://infogempa.com/" />
     <meta property="og:title" content="<?= $title; ?>"/>
@@ -66,15 +67,5 @@
             });
         });
     </script>
-
-    <a href="http://www.histats.com" target="_blank" title="counter easy hit" >
-    <script  type="text/javascript" >
-        try {Histats.start(1,3408822,4,0,0,0,"");
-        Histats.track_hits();} catch(err){};
-    </script>
-    </a>
-    <noscript>
-        <a href="/secsrc?url=http://www.histats.com" target="_blank"><img  src="/secsrc?url=http://sstatic1.histats.com/0.gif?3408822&101" alt="counter easy hit" border="0"></a>
-    </noscript>
 </body>
 </html>

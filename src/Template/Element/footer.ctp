@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center bottom-separator">
-                <img src="/images/home/under.png" class="img-responsive inline" alt="">
+                <img src="/images/home/under.png" class="img-responsive inline" alt="under png info gempa">
                 <br />
                 <p class="disclaimer"><strong>Disclaimer:</strong> Kami mencoba untuk menjaga informasi yang akurat dan terkini, namun Kami tidak dapat menjamin keakuratan informasi.</p>
             </div>
@@ -11,7 +11,7 @@
                     <h2>Testimonial</h2>
                     <div class="media">  
                     <div class="pull-left">
-                            <a href="#"><img src="/images/home/profile1.png" alt=""></a>
+                            <a href="#"><img src="/images/home/profile1.png" alt="profile 1 info gempa"></a>
                         </div>
                         <div class="media-body">
                             <blockquote>Bagus nih, bermanfaat jadi semakin tertarik belajar Geografi.</blockquote>
@@ -20,11 +20,11 @@
                      </div>
                     <div class="media">
                         <div class="pull-left">
-                            <a href="#"><img src="/images/home/profile2.png" alt=""></a>
+                            <a href="#"><img src="/images/home/profile2.png" alt="Profile 2 Info Gempa"></a>
                         </div>
                         <div class="media-body">
                             <blockquote>Bagus, tapi lebih bagus lagi kalo dibuatin aplikasi androidya.</blockquote>
-                            <h3><a href="">- Abraham Abdullah</a></h3>
+                            <h3><a href="#">- Abraham Abdullah</a></h3>
                         </div>
                     </div>   
                 </div> 
@@ -33,7 +33,7 @@
                 <div class="contact-info bottom">
                     <h2>Contacts</h2>
                     <address>
-                    E-mail: <a href="mailto:info@infogempa.com">info@infogempa.com</a> <br> 
+                    E-mail: info@infogempa.com <br> 
                     Build with : <a href="http://cakephp.org/">CakePHP 3</a><br />
                     Developed by : <a href="https://indocreator.co.id">IndoCreator</a>
                     </address>

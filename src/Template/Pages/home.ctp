@@ -19,32 +19,35 @@
         font-size: 16px;
         font-weight: 500;
     }
+    .margin-recaptcha {
+        margin-top: 5px;
+    }
 </style>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <section id="home-slider">
         <div class="container">
             <div class="main-slider">
                 <a href="/radar" class="btn btn-primary"><i class="fa fa-bullseye"></i> Radar</a>
-                <div class="slide-text">
-                    <h1 class="title">Informasi Gempa Bumi Dunia</h1>
-                    <p class="p-title">Kami menyediakan informasi mengenai gempa bumi yang terjadi di dunia. untuk mendapatkan informasi secara update silahkan subscribe.</p>
+                <div itemscope itemtype="https://schema.org/Place" class="slide-text">
+                    <h1 itemprop="headline" class="title">Informasi Gempa Bumi Dunia</h1>
+                    <p itemprop="description" class="p-title">Kami menyediakan informasi mengenai gempa bumi yang terjadi di dunia. untuk mendapatkan informasi secara update silahkan subscribe.</p>
                     <form action="/subscribe" method="post">
                         <?= $this->Flash->render('subscribe_scs') ?>
                         <?= $this->Flash->render('subscribe_emrg') ?>
                         <?= $this->Flash->render('subscribe_capt') ?>
                         <input type="text" name="email" id="email" class="form-control" placeholder="Email" required />
-                        <div class="g-recaptcha hidden" style="margin-top: 5px;" data-sitekey="6LciLRwTAAAAAF1vVA1Fw1vZRDj7a3-1PZg2UMqR"></div>
+                        <div class="g-recaptcha hidden margin-recaptcha" data-sitekey="6LciLRwTAAAAAF1vVA1Fw1vZRDj7a3-1PZg2UMqR"></div>
                         <button type="submit" href="#" class="btn btn-common btn-subscribe">Subscribe</button>
                     </form>
                 </div>
-                <img src="/images/home/slider/slide1/house.png" class="img-responsive slider-house" alt="slider image">
-                <img src="/images/home/slider/slide1/circle1.png" class="slider-circle1" alt="slider image">
-                <img src="/images/home/slider/slide1/circle2.png" class="slider-circle2" alt="slider image">
-                <img src="/images/home/slider/slide1/cloud1.png" class="slider-cloud1" alt="slider image">
-                <img src="/images/home/slider/slide1/cloud2.png" class="slider-cloud2" alt="slider image">
-                <img src="/images/home/slider/slide1/cloud3.png" class="slider-cloud3" alt="slider image">
-                <img src="/images/home/slider/slide1/sun.png" class="slider-sun" alt="slider image">
-                <img src="/images/home/cycle.png" class="slider-cycle" alt="">
+                <img src="/images/home/slider/slide1/house.png" class="img-responsive slider-house" alt="House info gempa">
+                <img src="/images/home/slider/slide1/circle1.png" class="slider-circle1" alt="Slider Circle 1 info gempa">
+                <img src="/images/home/slider/slide1/circle2.png" class="slider-circle2" alt="Slider Circle 2 info gempa">
+                <img src="/images/home/slider/slide1/cloud1.png" class="slider-cloud1" alt="cloud 1 info gempa">
+                <img src="/images/home/slider/slide1/cloud2.png" class="slider-cloud2" alt="cloud 2 info gempa">
+                <img src="/images/home/slider/slide1/cloud3.png" class="slider-cloud3" alt="cloud 3 info gempa">
+                <img src="/images/home/slider/slide1/sun.png" class="slider-sun" alt="Sun info gempa">
+                <img src="/images/home/cycle.png" class="slider-cycle" alt="Slider Cycle info gempa">
             </div>
         </div>
         <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
@@ -421,11 +424,11 @@
                         $slug = strtolower(str_replace(' ', '-', $lokasi)).'.html';
                     ?>
                         <tr>
-                            <td><strong><h3><i class="glyphicon glyphicon-map-marker"></i> &nbsp;&nbsp;&nbsp;<a href="/pages/<?= $value->id_gempa.DS.$slug ?>" title="<?= $value->title ?>"><?= $lokasi ?></a></h3></strong></td>
-                            <td><strong><a href="/pages/<?= $value->id_gempa.DS.$slug ?>" title="<?= $value->title ?>"><?= $country ?></a></strong></td>
-                            <td><?= $value->mag ?></td>
-                            <td><?= indonesian_date($time) ?></td>
-                            <td><a href="/pages/<?= $value->id_gempa.DS.$slug ?>" title="lihat detail gempa" class="btn btn-success" ><i class="fa fa-eye"></i></a></td>
+                            <td><strong><h3><i class="glyphicon glyphicon-map-marker"></i> &nbsp;&nbsp;&nbsp;<a href="/pages/<?= h($value->id_gempa.DS.$slug) ?>" title="<?= $value->title ?>"><?= h($lokasi) ?></a></h3></strong></td>
+                            <td><strong><a href="/pages/<?= h($value->id_gempa.DS.$slug) ?>" title="<?= h($value->title) ?>"><?= h($country) ?></a></strong></td>
+                            <td><?= h($value->mag) ?></td>
+                            <td><?= h(indonesian_date($time)) ?></td>
+                            <td><a href="/pages/<?= h($value->id_gempa.DS.$slug) ?>" title="lihat detail gempa" class="btn btn-success" ><i class="fa fa-eye"></i></a></td>
                         </tr>
                     <?php } ?>
                     </tbody>
