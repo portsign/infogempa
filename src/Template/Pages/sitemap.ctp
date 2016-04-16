@@ -1,14 +1,12 @@
 <?php 
-
     header('Content-type: application/xml');
-
 
     $blog_timezone = 'UTC';
     $timezone_offset = '+00:00';
     $W3C_datetime_format_php = 'Y-m-d\Th:i:s'; // See http://www.w3.org/TR/NOTE-datetime
-    // $null_sitemap = '<urlset><url><loc></loc></url></urlset>';
 
-    $output = '<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//yoast.com/main-sitemap.xsl"?>'. "\n";
+    $output = '<?xml version="1.0" encoding="UTF-8"?>
+                <?xml-stylesheet type="text/xsl" href="//yoast.com/main-sitemap.xsl"?>'. "\n";
     $output .= '<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
     echo $output;
 
@@ -34,5 +32,4 @@
     }
 
     echo '</urlset>';
-
 ?>
