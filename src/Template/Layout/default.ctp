@@ -14,6 +14,7 @@
     <meta name="keywords" content="info gempa dunia, infogempa, info gempa, gempa bumi, gempa dunia, informasi gempa terupdate, info gempa terkini, aplikasi gempa bumi, gempa bumi alert">
     <meta name="format-detection" content="telephone=no">
     <link rel="canonical" href="https://infogempa.com/" />
+    <meta name="msvalidate.01" content="6E6230D18ABDF866C9C776EAD63A3DA6" />
     <meta property="og:title" content="<?= $title; ?>"/>
     <meta property="og:description" content="Info Gempa | Kami menyediakan informasi mengenai gempa bumi yang terjadi di dunia. untuk mendapatkan informasi secara update silahkan subscribe"/>
     <meta property="og:site_name" content="Infogempa"/>
