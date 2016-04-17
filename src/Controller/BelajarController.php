@@ -7,7 +7,21 @@ class BelajarController extends AppController
 {
 	public function index()
     {
-        $content = file_get_contents('http://infogempa.com/artikel/api/get_recent_posts/');
+
+    	function getSslPage($url) {
+		    $ch = curl_init();
+		    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+		    curl_setopt($ch, CURLOPT_HEADER, false);
+		    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+		    curl_setopt($ch, CURLOPT_URL, $url);
+		    curl_setopt($ch, CURLOPT_REFERER, $url);
+		    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+		    $result = curl_exec($ch);
+		    curl_close($ch);
+		    return $result;
+		}
+
+        $content = getSslPage('https://infogempa.com/artikel/api/get_recent_posts/');
         $jsons = json_decode($content);
 
         $title = 'Info Gempa Dunia | Belajar Geologi dan Geofisika | infogempa.com';
