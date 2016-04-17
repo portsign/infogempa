@@ -7,7 +7,7 @@ class BelajarController extends AppController
 {
 	public function index()
     {
-        $content = file_get_contents('https://infogempa.com/artikel/api/get_recent_posts/');
+        $content = file_get_contents('http://infogempa.com/artikel/api/get_recent_posts/');
         $jsons = json_decode($content);
 
         $title = 'Info Gempa Dunia | Belajar Geologi dan Geofisika | infogempa.com';
