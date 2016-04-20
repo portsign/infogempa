@@ -39,7 +39,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/sitemap.xml', ['controller' => 'Pages', 'action' => 'sitemap']);
     $routes->connect('/berita/:slug.html', ['controller' => 'Berita', 'action' => 'detail']);
     $routes->connect('/secsrc', ['controller' => 'Pages', 'action' => 'secure_src']);
-    $routes->connect('/api/v1.0/5f5b71c3557420c9e305cb90d4142017/getdata.json', ['controller' => 'Pages', 'action' => 'createjson']);
+    $routes->connect('/api/v1.0/5f5b71c3557420c9e305cb90d4142017/getdata.FuckingJson', ['controller' => 'Pages', 'action' => 'createjson']);
     $routes->connect(
         '/pages/:id/:slug',
         ['controller' => 'Pages', 'action' => 'detail'],
