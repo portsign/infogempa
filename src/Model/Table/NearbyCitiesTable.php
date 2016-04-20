@@ -28,6 +28,11 @@ class NearbyCitiesTable extends Table
         $this->displayField('name');
 
         $this->addBehavior('Timestamp');
+        $this->belongsTo('Gempa', [
+            'className' => 'Gempa',
+            'foreignKey' => 'id_gempa'
+        ]);
+
     }
 
     /**

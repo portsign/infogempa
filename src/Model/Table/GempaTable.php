@@ -29,6 +29,12 @@ class GempaTable extends Table
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');
+    
+        $this->hasMany('NearbyCities', [
+            'foreignKey' => 'id_gempa',
+            'bindingKey' => 'id_gempa'
+        ]);
+
     }
 
     /**

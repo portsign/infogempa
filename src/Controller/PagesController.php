@@ -420,6 +420,14 @@ class PagesController extends AppController
         curl_close($ch) ;
         echo $res;
     }
-
+    public function createjson()
+    {
+        $this->RequestHandler->ext = 'json';
+        $this->loadModel('Gempa');
+        $this->loadModel('NearbyCities');
+        $gempa = $this->Gempa->find('all')->contain(['NearbyCities']);
+        $this->set(compact('gempa','nearby'));
+        $this->set('_serialize', ['gempa','nearby']);
+    }
 
 }
