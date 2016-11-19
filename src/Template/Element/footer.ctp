@@ -35,7 +35,6 @@
                     <address>
                     E-mail: info@infogempa.com <br> 
                     Build with : <a href="http://cakephp.org/">CakePHP 3</a><br />
-                    Developed by : <a href="https://indocreator.co.id">IndoCreator</a>
                     </address>
 
                     <h2>Pages</h2>
